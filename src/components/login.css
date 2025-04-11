@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "Patrick";
+  src: url("../Patrick.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to top right, #ffecb6, #ffffff);
+  font-family: "Patrick";
+}
+
+.form-wrapper {
+  border-radius: 8px;
+  min-width: 360px;
+}
+
+.login-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 100;
+}
+
+.signup-text {
+  text-align: center;
+  margin-bottom: 1.6rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.link-text {
+  color: #1a73e8;
+  cursor: pointer;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.phone-input-group {
+  display: flex;
+}
+
+.phone-input-group input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: "Patrick";
+  font-size: 1rem;
+}
+
+.otp-button {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Patrick";
+  font-size: 0.9rem;
+}
+
+.input-group input[type="password"] {
+  width: 94%;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: "Patrick";
+  font-size: 1rem;
+}
+
+.remember-me {
+  margin-bottom: 1.2rem;
+}
+
+.remember-me label {
+  font-size: 1.1rem;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 0.4rem;
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+
+.login-button {
+  width: 100%;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-family: "Patrick";
+}
+
+.divider {
+  text-align: center;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-family: "Patrick";
+  font-size: 1.1rem;
+}
+
+.social-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.social-button .facebook {
+  width: 28px;
+  height: 20px;
+}
