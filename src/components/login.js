@@ -9,6 +9,11 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
 
+  const phoneToMerchantMap = {
+    "0109450225": "0c2d7",
+    "01156388248": "3b7f0",
+  };
+
   const handleSignUp = () => {
     alert("Feature Invalid: Sign Up feature is not available yet.");
   };
@@ -16,6 +21,10 @@ const Login = () => {
   const handleSendOtp = () => {
     if (!phoneNumber.trim()) {
       alert("Please enter a valid phone number");
+      return;
+    }
+    if (!phoneToMerchantMap[phoneNumber]) {
+      alert("Phone number not recognized");
       return;
     }
     alert(`OTP code sent to ${phoneNumber}`);
@@ -33,18 +42,23 @@ const Login = () => {
       return;
     }
 
-    alert("Login successful!");
-    navigate("/chat");
+    const merchantId = phoneToMerchantMap[phoneNumber];
+    if (merchantId) {
+      alert("Login successful!");
+      navigate(`/chat/${merchantId}`);
+    } else {
+      alert("Phone number not recognized");
+    }
   };
 
   const handleGoogleLogin = () => {
     alert("Google login clicked");
-    navigate("/chat");
+    navigate("/chat/0c2d7");
   };
 
   const handleFacebookLogin = () => {
     alert("Facebook login clicked");
-    navigate("/chat");
+    navigate("/chat/0c2d7");
   };
 
   return (

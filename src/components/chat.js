@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Plus, Send } from "react-feather";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./chat.css";
 
 const Chat = () => {
@@ -17,6 +17,7 @@ const Chat = () => {
   const [isChatFocused, setIsChatFocused] = useState(false);
   const [isDashboardFull, setIsDashboardFull] = useState(false);
   const navigate = useNavigate();
+  const { id } = useParams();
 
   const handleSend = () => {
     if (message.trim()) {
@@ -80,7 +81,26 @@ const Chat = () => {
             <span>Chats</span>
           </button>
           <div className="profile" onClick={handleLogout}>
-            <img src="/profile.jpg" alt="Profile" className="profile-picture" />
+            {id === "0c2d7" && (
+              <>
+                <h2>Fried Chicken Express</h2>
+                <img
+                  src="/profile1.jpg"
+                  alt="Profile"
+                  className="profile-picture"
+                />
+              </>
+            )}
+            {id === "3b7f0" && (
+              <>
+                <h2>Donut Palace</h2>
+                <img
+                  src="/profile2.jpg"
+                  alt="Profile"
+                  className="profile-picture"
+                />
+              </>
+            )}
           </div>
         </div>
 
@@ -128,19 +148,86 @@ const Chat = () => {
           isDashboardFull ? "dashboard-full" : "dashboard-minimized"
         }`}
       >
-        <div className="pull-tab" onClick={handlePullTabClick}></div>
-        <div className="status-widgets">
-          <div className="status-card">
-            <p className="status-title">Total Sales</p>
-            <p className="status-value">RM</p>
-          </div>
+        {id === "0c2d7" && (
+          <>
+            <div className="pull-tab" onClick={handlePullTabClick}></div>
+            <div className="status-widgets">
+              <div className="sales-status">
+                <div className="sales-card">
+                  <p className="status-title">Total Sales</p>
+                  <p className="status-value">RM6000</p>
+                </div>
 
-          <div className="status-card">
-            <p className="status-value">
-              You are currently #1 for fried chicken
-            </p>
-          </div>
-        </div>
+                <div className="sales-card">
+                  <p className="status-title">Best Selling Item</p>
+                  <p className="status-value">Fried Chicken</p>
+                </div>
+              </div>
+
+              <div className="points">
+                <div className="status-card">
+                  <p className="status-title">Critical Issues: Lorem Ipsum</p>
+                </div>
+
+                <div className="status-card">
+                  <p className="status-title">
+                    Improvement Suggestions: Lorem Ipsum
+                  </p>
+                </div>
+              </div>
+
+              <div className="graphs">
+                <div className="graph-card">
+                  <p className="graph-title">Graphs</p>
+                </div>
+
+                <div className="graph-card">
+                  <p className="graph-title">Graphs</p>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+        {id === "3b7f0" && (
+          <>
+            <div className="pull-tab" onClick={handlePullTabClick}></div>
+            <div className="status-widgets">
+              <div className="sales-status">
+                <div className="sales-card">
+                  <p className="status-title">Total Sales</p>
+                  <p className="status-value">RM4500</p>
+                </div>
+
+                <div className="sales-card">
+                  <p className="status-title">Best Selling Item</p>
+                  <p className="status-value">Donuts</p>
+                </div>
+              </div>
+
+              <div className="points">
+                <div className="status-card">
+                  <p className="status-title">Critical Issues: Lorem Ipsum</p>
+                </div>
+
+                <div className="status-card">
+                  <p className="status-title">
+                    Improvement Suggestions: Lorem Ipsum
+                  </p>
+                </div>
+              </div>
+
+              <div className="graphs">
+                <div className="graph-card">
+                  <p className="graph-title">Graphs</p>
+                </div>
+
+                <div className="graph-card">
+                  <p className="graph-title">Graphs</p>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
