@@ -13,6 +13,7 @@ body {
   min-height: 100vh;
   background: linear-gradient(to top right, #ffecb6, #ffffff);
   font-family: "Patrick";
+  overflow-y: hidden;
 }
 
 .form-wrapper {

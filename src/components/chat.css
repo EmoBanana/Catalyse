@@ -1,0 +1,217 @@
+@font-face {
+  font-family: "Patrick";
+  src: url("../Patrick.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.chat-container {
+  height: 75vh;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  transition: height 0.3s ease;
+}
+
+.chat-focused {
+  height: 95vh;
+}
+
+.chat-hidden {
+  display: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  padding: 16px 10px;
+  padding-top: 2rem;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 2px 16px;
+  cursor: pointer;
+}
+
+.back-button span {
+  font-family: "Patrick";
+  font-size: 1rem;
+  margin-left: 6px;
+}
+
+.back-arrow {
+  font-size: 1.2rem;
+  line-height: 0.1rem;
+  padding-bottom: 2px;
+}
+
+.profile {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid black;
+}
+
+.message-date-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-header-container {
+  margin: 0 auto;
+}
+
+.date-header {
+  margin: 0;
+  margin-bottom: 1.2rem;
+}
+
+.messages-container {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-bubble {
+  max-width: 80%;
+  padding: 0 16px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  line-height: 1rem;
+  background-color: white;
+  border: 2px solid black;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.bot-message {
+  align-self: flex-start;
+  border-bottom-left-radius: 0px;
+}
+
+.user-message {
+  background-color: #ffecb6;
+  align-self: flex-end !important;
+  border-bottom-right-radius: 0px;
+}
+
+.message-input-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 18px;
+  padding: 10px 8px;
+  padding-bottom: 8px;
+  margin-bottom: 1rem;
+}
+
+.input {
+  font-family: "Patrick";
+  font-size: 1.1rem;
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0 8px;
+  resize: none;
+  outline: none;
+}
+
+.action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-bottom: 1.4rem;
+}
+
+.dashboard {
+  width: 92vw;
+  background: linear-gradient(to top right, #ffecb6, #ffffff);
+  border: solid 2px black;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding: 20px;
+  z-index: 10;
+}
+
+.dashboard-minimized {
+  animation: pull-down 0.5s ease-in-out forwards;
+}
+
+.dashboard-full {
+  animation: pull-up 0.5s ease-in-out forwards;
+}
+
+@keyframes pull-up {
+  from {
+    height: 25vh;
+  }
+  to {
+    height: 95vh;
+    border-radius: 0;
+  }
+}
+
+@keyframes pull-down {
+  from {
+    height: 95vh;
+  }
+  to {
+    height: 25vh;
+  }
+}
+
+.pull-tab {
+  width: 10rem;
+  height: 4px;
+  background-color: #ccc;
+  border-radius: 2px;
+  margin: 0 auto;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.status-widgets {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.status-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.status-value {
+  font-size: 14px;
+}

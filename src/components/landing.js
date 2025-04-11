@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./landing.css";
 
-export default function App() {
+const Landing = () => {
   const navigate = useNavigate();
 
   return (
@@ -21,4 +21,6 @@ export default function App() {
       </button>
     </div>
   );
-}
+};
+
+export default Landing;
