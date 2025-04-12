@@ -2,6 +2,7 @@
 *Meow-nitoring insights that drive business growth*
 
 **Cat? Analyse?** That's right — **Catalyse** is a playful yet powerful analytics platform designed to deliver real-time business insights through an intuitive chat interface and dynamic dashboards. Whether you're a merchant looking to grow or a manager tracking market trends, Catalyse helps you *pounce* on opportunities faster than ever.
+
 With Catalyse, you don’t just *analyze* — you **catalyse** your business growth.
 
 ## Features
