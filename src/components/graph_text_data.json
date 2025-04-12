@@ -1,0 +1,32 @@
+[
+  {
+    "title": "customer_growth",
+    "image_path": "customer.jpg",
+    "current_data": "null",
+    "description": "\ud83d\udcc8 Summary: You mostly have new customers each month.\n\n\ud83d\udd0d Key Observations:\n- New customers make up the majority every month compared to returning ones.\n- There's a consistent small number of returning customers.\n- The highest total number of customers appears steady across the year.\n\n\u2705 Tip for Action: Consider a loyalty program to encourage more returning visits."
+  },
+  {
+    "title": "hourly_order",
+    "image_path": "hourly.jpg",
+    "current_data": "{\"order_count\": 2107}",
+    "description": "\ud83d\udcc8 Summary: Orders are highest early in the morning and in the late afternoon.\n\n\ud83d\udd0d Key Observations:\n- The most orders happen around 6 AM and again at 6 PM.\n- There's a noticeable drop in orders between 7 AM and 10 AM, with the lowest point at 10 AM.\n- Orders pick up again in the afternoon, peaking at 6 PM.\n\n\u2705 Tip for Action: Consider offering morning specials and evening deals to take advantage of the rush during those hours."
+  },
+  {
+    "title": "multi_day_hourly",
+    "image_path": "/img3.png",
+    "current_data": "{\"order_count\": 325}",
+    "description": "\ud83d\udcc8 Summary: Salad sales increased in April.\n\n\ud83d\udd0d Key Observations: \n- Salad sales were highest in April compared to other sandwiches.\n- The Tuna sandwich had the lowest sales in March.\n- All items saw a slight sales rise in May. \n\n\u2705 Tip for Action: Consider promoting the Tuna sandwich to boost its popularity."
+  },
+  {
+    "title": "monthly_income",
+    "image_path": "monthly.jpg",
+    "current_data": "null",
+    "description": "\ud83d\udcc8 Summary: Income had ups and downs over the months.\n\n\ud83d\udd0d Key Observations:\n- Income was highest in May.\n- It dropped sharply in June.\n- There were smaller ups and downs in other months.\n\n\u2705 Tip for Action: Try to find out why May was so successful and see if you can repeat that in other months."
+  },
+  {
+    "title": "food_breakdown",
+    "image_path": "food.jpg",
+    "current_data": "[{\"item_name\": \"4-Piece Chicken Meal\", \"monthly_quantity\": 15918}, {\"item_name\": \"Chicken & Waffles\", \"monthly_quantity\": 8552}, {\"item_name\": \"Spicy Chicken Tenders\", \"monthly_quantity\": 4759}, {\"item_name\": \"Potato Wedges\", \"monthly_quantity\": 16702}]",
+    "description": "\ud83d\udcc8 Summary: Fried chicken sales stayed mostly steady, while certain side dishes had big changes.\n\n\ud83d\udd0d Key Observations:\n- For fried chicken, the highest sales were in May, and they remained strong throughout the year.\n- Chicken & Waffles and Spicy Chicken Tenders had a slight dip around June.\n- The 4-Piece Chicken Meal peaked sharply in May for sides.\n\n\u2705 Tip for Action: Consider focusing promotions on the 4-Piece Chicken Meal around May to maximize sales during peak interest."
+  }
+]

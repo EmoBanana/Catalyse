@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Transport",
+    "current_data": "[{\"_id\": null, \"avg_order_to_arrival_mins\": 12.482846458186549, \"avg_arrival_to_pickup_mins\": 6.02441602081188, \"avg_pickup_to_delivery_mins\": 19.993496287464094, \"avg_total_delivery_mins\": 38.500758766462525}]",
+    "description": "1. \ud83d\udcc8 Summary: The delivery process is running smoothly with reasonably fast times.\n\n2. \ud83d\udd0d Observations:\n   - On average, it takes about 12.5 minutes from order to when the food is ready for pickup.\n   - Once ready, it takes around 6 minutes for a delivery person to pick up the order.\n   - The delivery person typically takes about 20 minutes to get the order to the customer.\n   - In total, the entire delivery process is approximately 38.5 minutes from order to arrival at the customer's door.\n\n3. \u2705 Recommendation: To make the delivery service even quicker, see if there's a way to reduce the pickup time by organizing orders better or scheduling pickup times more efficiently."
+  },
+  {
+    "title": "Ranking",
+    "current_data": "[{\"rank_in_cuisine\": 26}, {\"rank_in_cuisine\": 1}]",
+    "description": "1. \ud83d\udcc8 Summary: The business is performing excellently in certain aspects like quick ranking improvement.\n\n2. \ud83d\udd0d Observations:\n   - The average total delivery time is about 38.5 minutes, from order to customer delivery.\n   - You had an amazing improvement in ranking, jumping from 26th to 1st in your cuisine category.\n   \n3. \u2705 Recommendation: \ud83c\udf1f Keep up the good delivery speed, and continue whatever strategies improved your ranking to maintain your top spot!"
+  },
+  {
+    "title": "Total Sales",
+    "current_data": "{\"total_earnings\": 338858.5}",
+    "description": "1. \ud83d\udcc8 Summary: The business is doing pretty well based on the total earnings.\n\n2. \ud83d\udd0d Observations:\n   - Orders take an average of about 38.5 minutes to be delivered from start to finish.\n   - Your service is currently ranked 26th among others in your cuisine.\n   \n3. \u2705 Recommendation: Consider finding ways to speed up delivery times to improve your ranking in your cuisine category."
+  },
+  {
+    "title": "Market Price",
+    "current_data": "{\"merchant_name\": \"Fried Chicken Express\", \"merchant_price\": 3.0, \"cuisine_avg_price\": NaN, \"price_difference\": NaN, \"percentage_difference\": \"nan%\"}",
+    "description": "1. \ud83d\udcc8 Summary: The business is doing quite well but there's always room for improvement in delivery efficiency.\n\n2. \ud83d\udd0d Observations:\n   - On average, it takes just over 38 minutes for a delivery to be completed from order to customer, with the longest part being the pickup to delivery time.\n   - You are ranked number 1 in your cuisine category, which is excellent.\n   - The total earnings are $338,858.50, a good sign of a strong business model.\n   - The pricing details in comparison to the average cuisine price are not available.\n\n3. \u2705 Recommendation: Consider finding ways to speed up the pickup to delivery time to improve customer satisfaction even more."
+  }
+]

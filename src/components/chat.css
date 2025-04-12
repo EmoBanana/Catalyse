@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  transition: height 0.3s ease;
+  transition: height 0.9s ease;
 }
 
 .chat-focused {
@@ -153,6 +153,22 @@
   margin-bottom: 1.4rem;
 }
 
+.dashboard-placeholder {
+  height: 21vh;
+  width: 92vw;
+  background: linear-gradient(to top right, #ffecb6, #ffffff);
+  border: solid 2px black;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.dashboard-placeholder.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .dashboard {
   width: 92vw;
   background: linear-gradient(to top right, #ffecb6, #ffffff);
@@ -162,6 +178,11 @@
   padding: 20px;
   padding-bottom: 40px;
   z-index: 10;
+  overflow-y: auto;
+  position: fixed;
+  bottom: -1.5vh;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .dashboard-minimized {
@@ -169,7 +190,11 @@
 }
 
 .dashboard-full {
-  animation: pull-up 0.5s ease-in-out forwards;
+  animation: pull-up 1s ease-in-out forwards;
+}
+
+.dashboard-hidden {
+  animation: hide 0.6s ease-in-out forwards;
 }
 
 @keyframes pull-up {
@@ -177,7 +202,7 @@
     height: 25vh;
   }
   to {
-    height: 93vh;
+    height: 95vh;
     border-radius: 0;
   }
 }
@@ -188,6 +213,15 @@
   }
   to {
     height: 25vh;
+  }
+}
+
+@keyframes hide {
+  from {
+    top: 75vh;
+  }
+  to {
+    top: 95vh;
   }
 }
 
@@ -245,22 +279,190 @@
 }
 
 .graphs {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .graph-card {
-  flex: 1;
   background-color: #fff;
   border: 2px solid black;
-  border-radius: 18px;
-  padding: 4.5rem 16px;
-  margin: 2px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.graph-card.expanded {
+  grid-column: 1 / -1;
+  cursor: default;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
 .graph-title {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.graph-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-image {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.graph-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.graph-card.expanded .graph-content {
+  flex-direction: column;
+  gap: 24px;
+}
+
+.graph-card.expanded .graph-image {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.graph-details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.current-data,
+.graph-description {
+  background-color: white;
+  border: 1px solid #868686;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.current-data h4,
+.graph-description h4 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.graph-description p {
+  margin: 0;
+  white-space: pre-line;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.current-data-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.item-name {
+  font-weight: 500;
+  color: #555;
+}
+
+.item-quantity {
+  font-weight: 600;
+  color: #333;
+}
+
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 2rem;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s;
+}
+
+.modal-close-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.modal-image {
+  display: block;
+  width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+  transform: rotate(90deg);
+}
+
+.image-modal-content {
   display: flex;
   justify-content: center;
-  font-size: 2rem;
+  align-items: center;
+  width: 80vh;
+  height: 80vw;
 }
