@@ -244,6 +244,7 @@
 .sales-status {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -252,8 +253,33 @@
   background-color: #fff;
   border: 2px solid black;
   border-radius: 18px;
-  padding: 0 16px;
-  margin: 2px;
+  padding: 0 10px;
+  margin: 0 2px;
+}
+
+.sales-card.expanded {
+  flex: 1 1 100%;
+  background-color: #f9f9f9;
+}
+
+.sales-card .status-title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.sales-card .status-value {
+  font-size: 1.1rem;
+  color: black;
+  text-wrap: nowrap;
+  white-space: pre-wrap;
+}
+
+.sales-card .description {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+  white-space: pre-wrap;
 }
 
 .points {
@@ -276,6 +302,88 @@
 
 .status-value {
   font-size: 1rem;
+}
+
+.textdata-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.textdata-card.expanded {
+  height: auto;
+}
+
+.textdata-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.textdata-content {
+  padding: 0 15px 15px;
+}
+
+.textdata-current-container {
+  margin-bottom: 10px;
+}
+
+.textdata-description {
+  white-space: pre-wrap;
+}
+
+.textdata-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textdata-name {
+  font-weight: 500;
+  color: #666;
+}
+
+.textdata-quantity {
+  font-weight: 600;
+  color: #333;
+}
+
+.textdata-close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.textdata-close-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.alert-card {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 0 12px;
+  margin-bottom: 10px;
+}
+
+.alert-title {
+  font-size: 1.2rem;
+  line-height: 0;
+  font-weight: bold;
+  color: black;
+}
+
+.alert-description {
+  font-size: 1rem;
+  color: black;
+  line-height: 1rem;
 }
 
 .graphs {

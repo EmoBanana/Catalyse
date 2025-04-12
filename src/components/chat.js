@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Plus, Send, X } from "react-feather";
-import { useNavigate, useParams } from "react-router-dom";
+import { data, useNavigate, useParams } from "react-router-dom";
 import "./chat.css";
 import graphData from "./graph_text_data.json";
 import textData from "./text_data.json";
+import alertData from "./alerts.json";
 
 const Chat = () => {
   const [message, setMessage] = useState("");
@@ -18,7 +19,9 @@ const Chat = () => {
 
   const [isChatFocused, setIsChatFocused] = useState(false);
   const [isDashboardFull, setIsDashboardFull] = useState(false);
+  const [expandedCard, setExpandedCard] = useState(null);
   const [expandedGraph, setExpandedGraph] = useState(null);
+  const [expandedTextData, setExpandedTextData] = useState(null);
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
@@ -73,6 +76,14 @@ const Chat = () => {
     }
   };
 
+  const handleTextDataClick = (index) => {
+    if (expandedTextData === index) {
+      setExpandedTextData(null);
+    } else {
+      setExpandedTextData(index);
+    }
+  };
+
   const handleImageClick = (e, imagePath, index) => {
     if (expandedGraph === index) {
       setSelectedImage(imagePath);
@@ -83,6 +94,10 @@ const Chat = () => {
   const handleCloseModal = () => {
     setImageModalOpen(false);
     setSelectedImage(null);
+  };
+
+  const handleCardClick = (index) => {
+    setExpandedCard(expandedCard === index ? null : index); // Toggle expanded state
   };
 
   useEffect(() => {
@@ -104,36 +119,76 @@ const Chat = () => {
   };
 
   const formatCurrentData = (data) => {
-    if (data === "null") return "No current data available";
-
     try {
-      const parsedData = JSON.parse(data);
+      // Replace invalid JSON values (NaN, "nan%") with valid placeholders
+      const sanitizedData = data
+        .replace(/NaN/g, "null") // Replace NaN with null
+        .replace(/"nan%"/g, '"N/A"'); // Replace "nan%" with "N/A"
+
+      const parsedData = JSON.parse(sanitizedData);
 
       if (Array.isArray(parsedData)) {
         return (
-          <div className="current-data-list">
+          <div className="textdata-current-list">
             {parsedData.map((item, idx) => (
-              <div key={idx} className="data-item">
-                <span className="item-name">{item.item_name}:</span>
-                <span className="item-quantity">
-                  {item.monthly_quantity.toLocaleString()}
-                </span>
+              <div key={idx} className="textdata-item">
+                {Object.entries(item).map(([key, value]) => {
+                  const formattedKey = key
+                    .replace(/_/g, " ")
+                    .split(" ")
+                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(" ");
+
+                  const formattedValue =
+                    value === null ||
+                    (typeof value === "number" && isNaN(value))
+                      ? "N/A"
+                      : typeof value === "number"
+                      ? value.toLocaleString()
+                      : value.toString();
+
+                  return (
+                    <div key={key} className="textdata-row">
+                      <span className="textdata-name">{formattedKey}:</span>
+                      <span className="textdata-quantity">
+                        {formattedValue}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             ))}
           </div>
         );
       } else if (typeof parsedData === "object") {
-        return Object.entries(parsedData).map(([key, value], idx) => (
-          <div key={idx} className="data-item">
-            <span className="item-name">{key.replace(/_/g, " ")}:</span>
-            <span className="item-quantity">{value.toLocaleString()}</span>
-          </div>
-        ));
-      }
+        return (
+          <div className="textdata-current-list">
+            {Object.entries(parsedData).map(([key, value], idx) => {
+              const formattedKey = key
+                .replace(/_/g, " ")
+                .split(" ")
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(" ");
 
-      return JSON.stringify(parsedData);
+              const formattedValue =
+                value === null || (typeof value === "number" && isNaN(value))
+                  ? "N/A"
+                  : typeof value === "number"
+                  ? value.toLocaleString()
+                  : value.toString();
+
+              return (
+                <div key={idx} className="textdata-row">
+                  <span className="textdata-name">{formattedKey}:</span>
+                  <span className="textdata-quantity">{formattedValue}</span>
+                </div>
+              );
+            })}
+          </div>
+        );
+      }
     } catch (error) {
-      return data;
+      return <div>Error parsing data</div>;
     }
   };
 
@@ -242,27 +297,87 @@ const Chat = () => {
             <div className="pull-tab" onClick={handlePullTabClick}></div>
             <div className="status-widgets">
               <div className="sales-status">
-                <div className="sales-card">
-                  <p className="status-title">Total Sales</p>
-                  <p className="status-value">RM6000</p>
-                </div>
+                {textData.map((data, index) => {
+                  if (
+                    data.title === "Total Sales" ||
+                    data.title === "Ranking"
+                  ) {
+                    return (
+                      <div
+                        key={index}
+                        className={`sales-card ${
+                          expandedCard === index ? "expanded" : ""
+                        }`}
+                        onClick={() => handleCardClick(index)}
+                      >
+                        <p className="status-title">
+                          {formatTitle(data.title)}
+                        </p>
+                        <p className="status-value">
+                          {formatCurrentData(data.current_data)}
+                        </p>
+                        {expandedCard === index && (
+                          <p className="description">{data.description}</p>
+                        )}
+                      </div>
+                    );
+                  }
+                  return null;
+                })}
+              </div>
 
-                <div className="sales-card">
-                  <p className="status-title">Best Selling Item</p>
-                  <p className="status-value">Fried Chicken</p>
-                </div>
+              <div>
+                {alertData &&
+                  Object.entries(alertData).map(([key, value], index) => (
+                    <div key={index} className="alert-card">
+                      <p className="alert-title">{formatTitle(key)}</p>
+                      <p className="alert-description">{value}</p>
+                    </div>
+                  ))}
               </div>
 
               <div className="points">
-                <div className="status-card">
-                  <p className="status-title">Critical Issues: Lorem Ipsum</p>
-                </div>
+                {textData.map((data, index) => {
+                  if (
+                    data.title === "Transport" ||
+                    data.title === "Market Price"
+                  ) {
+                    return (
+                      <div
+                        key={index}
+                        className={`status-card textdata-card ${
+                          expandedTextData === index ? "expanded" : ""
+                        }`}
+                        onClick={() => handleTextDataClick(index)}
+                      >
+                        <div className="textdata-header">
+                          <p className="status-title">
+                            {formatTitle(data.title)}
+                          </p>
+                          {expandedTextData === index && (
+                            <button className="textdata-close-button">
+                              <X size={16} />
+                            </button>
+                          )}
+                        </div>
 
-                <div className="status-card">
-                  <p className="status-title">
-                    Improvement Suggestions: Lorem Ipsum
-                  </p>
-                </div>
+                        <div className="textdata-content">
+                          <div className="textdata-current-container">
+                            {formatCurrentData(data.current_data)}
+                          </div>
+
+                          {expandedTextData === index && (
+                            <div className="textdata-description">
+                              <h4>Analysis:</h4>
+                              <p>{data.description}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  }
+                  return null;
+                })}
               </div>
 
               <div className="graphs">
@@ -338,15 +453,49 @@ const Chat = () => {
               </div>
 
               <div className="points">
-                <div className="status-card">
-                  <p className="status-title">Critical Issues: Lorem Ipsum</p>
-                </div>
+                {textData.map((data, index) => {
+                  if (
+                    data.title === "Total Sales" ||
+                    data.title === "Ranking" ||
+                    data.title === "Transport" ||
+                    data.title === "Market Price"
+                  ) {
+                    return (
+                      <div
+                        key={index}
+                        className={`status-card textdata-card ${
+                          expandedTextData === index ? "expanded" : ""
+                        }`}
+                        onClick={() => handleTextDataClick(index)}
+                      >
+                        <div className="textdata-header">
+                          <p className="status-title">
+                            {formatTitle(data.title)}
+                          </p>
+                          {expandedTextData === index && (
+                            <button className="textdata-close-button">
+                              <X size={16} />
+                            </button>
+                          )}
+                        </div>
 
-                <div className="status-card">
-                  <p className="status-title">
-                    Improvement Suggestions: Lorem Ipsum
-                  </p>
-                </div>
+                        <div className="textdata-content">
+                          <div className="textdata-current-container">
+                            {formatCurrentData(data.current_data)}
+                          </div>
+
+                          {expandedTextData === index && (
+                            <div className="textdata-description">
+                              <h4>Analysis:</h4>
+                              <p>{data.description}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  }
+                  return null;
+                })}
               </div>
 
               <div className="graphs">
