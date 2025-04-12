@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+# Catalyse
+*Meow-nitoring insights that drive business growth*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Cat? Analyse?** That's right — **Catalyse** is a playful yet powerful analytics platform designed to deliver real-time business insights through an intuitive chat interface and dynamic dashboards. Whether you're a merchant looking to grow or a manager tracking market trends, Catalyse helps you *pounce* on opportunities faster than ever.
+With Catalyse, you don’t just *analyze* — you **catalyse** your business growth.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Chat Interface**: 
+  - Engage in a conversational experience to ask business-related questions.
+  - Receive AI-generated insights tailored to your queries.
+  - Messages are neatly grouped by date for enhanced readability.
 
-### `npm start`
+- **Dynamic Dashboard**:
+  - Displays key metrics including:
+      - Total Sales
+      - Product Rankings
+      - Transport & Logistic Data
+      - Market Prices
+  - Includes alerts highlighting bottlenecks and growth opportunities.
+  - Interactive graphs and expandable data cards let you explore details on demand.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Merchant-Specific Insights**:
+  - Each merchant is equipped with a personalized dashboard reflecting their own business data.
+  - Supports focused decision-making with precise, relevant insights.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Responsive Design**:
+  - Enjoy a smooth experience across devices — from mobile to desktop.
+  - Seamless transitions between chat and dashboard views.
 
-### `npm test`
+## Powered by Machine Learning
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Catalyse leverages a custom ML model trained on a synthetic business dataset to generate insightful recommendations and alerts. The system continuously adapts to provide smarter suggestions the more you use it.
 
-### `npm run build`
+## Why Catalyse?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Because your business deserves to:
+- **Grow smarter, not harder**
+- **Catch trends before they pass**
+- **And most importantly — meow-nitor insights like a pro**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Frontend:** React
+- **Backend:** Node.js
+- **ML Engine:** Python
+- **Database:** MongoDB
 
-### `npm run eject`
+## Live Demo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Check out our [live demo on Vercel](https://meowmeow-beta.vercel.app/) to experience Catalyse for yourself. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Cloning and Running Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Follow these steps to clone the repository and run the application locally.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Prerequisites
 
-## Learn More
+Before you can run the application, you need to have the following installed:
+- **Node.js** (v14.0.0 or higher)
+  [Download Node.js](https://nodejs.org/en)
+- **npm** (Node Package Manager)
+  npm is bundled with Node.js, so you don't need to install it separately if you have Node.js.
+- **Python** (for ML model)
+  [Download Python](https://www.python.org/downloads/)
+- **ML Model Dependencies**
+  Python libraries. Install them using:
+  ```bash
+   pip install -r requirements.txt
+  ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To get started with **Catalyse**, clone the repository and install the dependencies:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/EmoBanana/meowmeow.git
+   ```
 
-### Code Splitting
+2. **Navigate to the project directory**:
+   ```bash
+   cd meowmeow
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+### Running the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To start the application locally, run the following command:
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This will start the development server, and the app should automatically open in your default browser. If not, visit `http://localhost:3000` to view the application.
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+We welcome contributions! Feel free to submit issues or pull requests to improve Catalyse.
 
-### Deployment
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a pull request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with ❤️
