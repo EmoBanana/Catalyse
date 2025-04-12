@@ -5,6 +5,10 @@
 
 With Catalyse, you don’t just *analyse* — you **catalyse** your business growth.
 
+## Links
+**Canva:** https://www.canva.com/design/DAGkYZnWrWM/s-S02pfAogHt4H-3y6Pkfw/edit?utm_content=DAGkYZnWrWM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+**Documentation:** https://docs.google.com/document/d/1vYSEOUSCAaLvw0wPxVPfSihfdAguq-MtMrddaaM2f9s/edit?usp=sharing
+
 ## Features
 
 - **Chat Interface**: 
