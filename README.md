@@ -21,7 +21,7 @@ With Catalyse, you don’t just *analyze* — you **catalyse** your business gro
   - Interactive graphs and expandable data cards let you explore details on demand.
 
 - **Merchant-Specific Insights**:
-  - Each merchant is equipped with a personalized dashboard reflecting their own business data.
+  - Each merchant has a personalized dashboard reflecting their business data.
   - Supports focused decision-making with precise, relevant insights.
 
 - **Responsive Design**:
@@ -48,7 +48,7 @@ Because your business deserves to:
 
 ## Live Demo
 
-Check out our [live demo on Vercel](https://meowmeow-beta.vercel.app/) to experience Catalyse for yourself. 
+Check out our [live demo on Vercel](https://cat-alyse.vercel.app/) to experience Catalyse for yourself. 
 
 ## Cloning and Running Locally
 
