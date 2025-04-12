@@ -9,7 +9,7 @@ With Catalyse, you don’t just *analyse* — you **catalyse** your business gro
 
 **Canva:** https://www.canva.com/design/DAGkYZnWrWM/s-S02pfAogHt4H-3y6Pkfw/edit?utm_content=DAGkYZnWrWM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-**Documentation:** https://docs.google.com/document/d/1vYSEOUSCAaLvw0wPxVPfSihfdAguq-MtMrddaaM2f9s/edit?usp=sharing
+**Documentation:** https://drive.google.com/file/d/16ycshubPMgF7WbU9xgI-NLAambmdA3JR/view?usp=sharing
 
 ## Features
 
