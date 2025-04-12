@@ -35,10 +35,32 @@
 }
 
 .title-text {
-  font-size: 50px;
+  font-size: 5rem;
+  line-height: 2rem;
   color: #000;
   text-align: center;
-  font-family: "Futura";
+  font-family: "Patrick";
+}
+
+.title-text span {
+  color: #f5d06b;
+}
+
+.title-container p {
+  line-height: 0;
+  font-size: 1.1rem;
+}
+
+.left-ear {
+  position: absolute;
+  left: 4.5rem;
+  transform: rotate(-20deg);
+}
+
+.right-ear {
+  position: absolute;
+  left: 10.6rem;
+  transform: rotate(20deg);
 }
 
 .image-container {

@@ -9,15 +9,22 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
 
+  //Hardcoded phone numbers and merchant IDs for testing purposes
+  //Each phone number is mapped to a merchant ID
+  //In a real application, this data would be fetched from a server
   const phoneToMerchantMap = {
     "0109450225": "0c2d7",
     "01156388248": "3b7f0",
   };
 
+  //No means of signing up yet for this prototype
+  //In a real application, this would be a form to collect user information
   const handleSignUp = () => {
     alert("Feature Invalid: Sign Up feature is not available yet.");
   };
 
+  //Only phone number "0109450225" and "01156388248" are recognized
+  //In a real application, this would be checked against a database
   const handleSendOtp = () => {
     if (!phoneNumber.trim()) {
       alert("Please enter a valid phone number");
@@ -42,6 +49,7 @@ const Login = () => {
       return;
     }
 
+    //Navigate to respective chat page based on the merchant ID
     const merchantId = phoneToMerchantMap[phoneNumber];
     if (merchantId) {
       alert("Login successful!");
@@ -51,11 +59,15 @@ const Login = () => {
     }
   };
 
+  //Hardcode to navigate to first merchant page for testing purposes
+  //In a real application, this would be replaced with actual authentication logic
   const handleGoogleLogin = () => {
     alert("Google login clicked");
     navigate("/chat/0c2d7");
   };
 
+  //Hardcode to navigate to first merchant page for testing purposes
+  //In a real application, this would be replaced with actual authentication logic
   const handleFacebookLogin = () => {
     alert("Facebook login clicked");
     navigate("/chat/0c2d7");

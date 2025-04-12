@@ -12,7 +12,7 @@
   {
     "title": "Transport",
     "current_data": "[{\"_id\": null, \"avg_order_to_arrival_mins\": 12.482846458186549, \"avg_arrival_to_pickup_mins\": 6.02441602081188, \"avg_pickup_to_delivery_mins\": 19.993496287464094, \"avg_total_delivery_mins\": 38.500758766462525}]",
-    "description": "1. \ud83d\udcc8 Summary: The delivery process is generally smooth, taking just under 39 minutes on average.\n2. \ud83d\udd0d Observations:\n   - It takes about 12.5 minutes from order to arrival at the restaurant.\n   - The wait time for picking up the order is roughly 6 minutes.\n   - Deliveries take about 20 minutes from pickup to reaching the customer.\n   - The total average delivery time is 38.5 minutes.\n3. \u2705 Recommendation: Consider ways to reduce pickup wait time to make deliveries even faster."
+    "description": "1. \ud83d\udcc8 Summary: The delivery process is generally smooth, taking just under 39 minutes on average.\n\n2. \ud83d\udd0d Observations:\n   - It takes about 12.5 minutes from order to arrival at the restaurant.\n   - The wait time for picking up the order is roughly 6 minutes.\n   - Deliveries take about 20 minutes from pickup to reaching the customer.\n   - The total average delivery time is 38.5 minutes.\n\n3. \u2705 Recommendation: Consider ways to reduce pickup wait time to make deliveries even faster."
   },
   {
     "title": "Market Price",

@@ -15,7 +15,7 @@ const Chat = () => {
       sender: "bot",
       timestamp: "Today",
     },
-  ]);
+  ]); //Welcome message for the user
 
   const [isChatFocused, setIsChatFocused] = useState(false);
   const [isDashboardFull, setIsDashboardFull] = useState(false);
@@ -40,33 +40,33 @@ const Chat = () => {
       ]);
       setMessage("");
     }
-  };
+  }; // Send message to the chat with timestamp
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSend();
     }
-  };
+  }; // Handle Enter key press to send message
 
   const handleInputAreaClick = () => {
     setIsChatFocused(true);
     if (isDashboardFull) {
       setIsDashboardFull(false);
     }
-  };
+  }; //Make Dashboard Preview hidden when Chat is focused
 
   const handlePullTabClick = () => {
     setIsDashboardFull(!isDashboardFull);
     setIsChatFocused(false);
-  };
+  }; // Toggle Dashboard to full screen by clicking the pull tab
 
   const handleLogout = () => {
     const confirmLogout = window.confirm("Are you sure you want to log out?");
     if (confirmLogout) {
       navigate("/login");
     }
-  };
+  }; // Logout function to navigate back to login page
 
   const handleGraphClick = (index) => {
     if (expandedGraph === index) {
@@ -74,7 +74,7 @@ const Chat = () => {
     } else {
       setExpandedGraph(index);
     }
-  };
+  }; //Show or hide description of the graph when clicked
 
   const handleTextDataClick = (index) => {
     if (expandedTextData === index) {
@@ -82,23 +82,23 @@ const Chat = () => {
     } else {
       setExpandedTextData(index);
     }
-  };
+  }; //Show or hide description of the sales highlight report when clicked
 
   const handleImageClick = (e, imagePath, index) => {
     if (expandedGraph === index) {
       setSelectedImage(imagePath);
       setImageModalOpen(true);
     }
-  };
+  }; //Show graphs sideways when clicked for maximum visibility
 
   const handleCloseModal = () => {
     setImageModalOpen(false);
     setSelectedImage(null);
-  };
+  }; //Close the image modal when clicked outside of the image
 
   const handleCardClick = (index) => {
-    setExpandedCard(expandedCard === index ? null : index); // Toggle expanded state
-  };
+    setExpandedCard(expandedCard === index ? null : index);
+  }; // Show or hide description of the sales highlight report when clicked
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -199,7 +199,7 @@ const Chat = () => {
     }
     groups[date].push(message);
     return groups;
-  }, {});
+  }, {}); // Group messages by date
 
   return (
     <div>
@@ -215,6 +215,7 @@ const Chat = () => {
             <span>Chats</span>
           </button>
           <div className="profile" onClick={handleLogout}>
+            {/* Profile picture and merchant name based on the merchant ID */}
             {id === "0c2d7" && (
               <>
                 <h2>Fried Chicken Express</h2>
@@ -292,6 +293,7 @@ const Chat = () => {
             : "dashboard-minimized"
         }`}
       >
+        {/* Dashboard that provides insights based on merchant ID */}
         {id === "0c2d7" && (
           <>
             <div className="pull-tab" onClick={handlePullTabClick}></div>
