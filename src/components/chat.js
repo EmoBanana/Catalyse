@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Plus, Send, X } from "react-feather";
-import { data, useNavigate, useParams } from "react-router-dom";
+import { Plus, Send, X, ChevronDown } from "react-feather";
+import { useNavigate, useParams } from "react-router-dom";
 import "./chat.css";
 import graphData from "./graph_text_data.json";
 import textData from "./text_data.json";
@@ -24,23 +24,101 @@ const Chat = () => {
   const [expandedTextData, setExpandedTextData] = useState(null);
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [language, setLanguage] = useState("English");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const handleSend = () => {
-    if (message.trim()) {
-      setMessages([
-        ...messages,
-        {
-          id: Date.now(),
-          text: message,
-          sender: "user",
-          timestamp: "Today",
+  // List of languages
+  const languages = [
+    "English",
+    "Spanish",
+    "French",
+    "German",
+    "Chinese",
+    "Japanese",
+    "Korean",
+    "Russian",
+    "Arabic",
+    "Hindi",
+    "Portuguese",
+    "Italian",
+    "Dutch",
+    "Swedish",
+    "Finnish",
+    "Norwegian",
+    "Danish",
+    "Polish",
+    "Turkish",
+    "Greek",
+    "Hebrew",
+    "Thai",
+    "Vietnamese",
+    "Indonesian",
+    "Malay",
+    "Filipino",
+    "Bengali",
+    "Urdu",
+    "Persian",
+    "Swahili",
+  ];
+
+  // Filtered languages based on search term
+  const filteredLanguages = languages.filter((lang) =>
+    lang.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleSend = async () => {
+    if (!message.trim()) return;
+
+    const newUserMessage = {
+      id: Date.now(),
+      text: message,
+      sender: "user",
+      timestamp: "Today",
+    };
+
+    setMessages((prev) => [...prev, newUserMessage]);
+    const userQuery = message;
+    setMessage(""); // clear input
+
+    try {
+      const response = await fetch("http://localhost:5000/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      ]);
-      setMessage("");
+        body: JSON.stringify({
+          query: userQuery,
+          merchant_id: "0c2d7",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to get response from server");
+      }
+
+      const data = await response.json();
+      const aiReply = {
+        id: Date.now() + 1,
+        text: data.response,
+        sender: "bot",
+        timestamp: "Today",
+      };
+
+      setMessages((prev) => [...prev, aiReply]);
+    } catch (error) {
+      console.error("Error:", error);
+      const errorReply = {
+        id: Date.now() + 2,
+        text: "Sorry, something went wrong.",
+        sender: "bot",
+        timestamp: "Today",
+      };
+      setMessages((prev) => [...prev, errorReply]);
     }
-  }; // Send message to the chat with timestamp
+  };
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -99,6 +177,38 @@ const Chat = () => {
   const handleCardClick = (index) => {
     setExpandedCard(expandedCard === index ? null : index);
   }; // Show or hide description of the sales highlight report when clicked
+
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
+    setDropdownOpen(!dropdownOpen);
+    if (!dropdownOpen) {
+      setSearchTerm("");
+    }
+  }; // Handle language dropdown click
+
+  const selectLanguage = (lang) => {
+    setLanguage(lang);
+    setDropdownOpen(false);
+    setSearchTerm("");
+  }; // Handle language selection
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  }; // Handle search term change
+
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setDropdownOpen(false);
+    };
+
+    if (dropdownOpen) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [dropdownOpen]); // Close dropdown when clicking outside
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -260,6 +370,38 @@ const Chat = () => {
         </div>
 
         <div className="input-area">
+          <div className="language-dropdown-container">
+            <div className="language-selector" onClick={toggleDropdown}>
+              <span>{language}</span>
+              <ChevronDown size={16} />
+            </div>
+            {dropdownOpen && (
+              <div className="language-dropdown">
+                <div className="language-search">
+                  <input
+                    type="text"
+                    placeholder="Search language..."
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                </div>
+                <div className="language-options">
+                  {filteredLanguages.slice(0, 300).map((lang, index) => (
+                    <div
+                      key={index}
+                      className={`language-option ${
+                        language === lang ? "selected" : ""
+                      }`}
+                      onClick={() => selectLanguage(lang)}
+                    >
+                      {lang}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
           <div className="message-input-container">
             <button className="action-button">
               <Plus size={20} />
@@ -269,7 +411,7 @@ const Chat = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Ask Anything"
+              placeholder={`Ask Anything in ${language}`}
             />
             <button className="action-button send-button" onClick={handleSend}>
               <Send size={20} />
