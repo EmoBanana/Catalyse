@@ -30,26 +30,8 @@
 }
 
 .back-button {
-  display: flex;
-  align-items: center;
-  background: none;
-  border: 2px solid black;
-  border-radius: 8px;
-  padding: 2px 16px;
-  cursor: pointer;
-}
-
-.back-button span {
-  font-family: "Medium";
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-left: 6px;
-}
-
-.back-arrow {
-  font-size: 1.2rem;
-  line-height: 0.1rem;
-  padding-bottom: 2px;
+  margin-left: 0.2rem;
+  margin-top: 0.36rem;
 }
 
 .profile {
