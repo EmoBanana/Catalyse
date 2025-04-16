@@ -1,8 +1,8 @@
 [
   {
     "title": "Total Sales",
-    "current_data": "{\"total_earnings\": \n\"RM338858.5\"}",
-    "description": "1. \ud83d\udcc8 Summary: The business is doing well, especially with Fried Chicken.\n\n2. \ud83d\udd0d Observations:\n   - The average delivery time from order to final delivery is about 38.5 minutes.\n   - Fried Chicken ranks as the top-performing item, while Sides rank lower at 26th.\n   - Total earnings amounted to $338,858.50, which is a healthy figure.\n\n3. \u2705 Recommendation: Focus on promoting side dishes to balance sales across more menu items."
+    "current_data": "\"RM 338858.5\"",
+    "description": "1. \ud83d\udcc8 Summary: The business is doing well, especially with Fried Chicken..."
   },
   {
     "title": "Ranking",

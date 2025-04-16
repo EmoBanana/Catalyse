@@ -1,0 +1,7 @@
+POST http://localhost:5000/ask
+Content-Type: application/json
+
+{
+  "merchant_id":"0c2d7",
+  "query": "Please, respond to this request with a JSON object containing the merchant_id and the response message."
+}

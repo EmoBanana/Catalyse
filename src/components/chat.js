@@ -81,7 +81,7 @@ const Chat = () => {
 
     setMessages((prev) => [...prev, newUserMessage]);
     const userQuery = message;
-    setMessage(""); // clear input
+    setMessage(""); // Clear input
 
     try {
       const response = await fetch("http://localhost:5000/ask", {
@@ -112,7 +112,7 @@ const Chat = () => {
       console.error("Error:", error);
       const errorReply = {
         id: Date.now() + 2,
-        text: "Sorry, something went wrong.",
+        text: "Sorry, something went wrong while getting a response.",
         sender: "bot",
         timestamp: "Today",
       };
@@ -230,10 +230,37 @@ const Chat = () => {
 
   const formatCurrentData = (data) => {
     try {
-      // Replace invalid JSON values (NaN, "nan%") with valid placeholders
       const sanitizedData = data
-        .replace(/NaN/g, "null") // Replace NaN with null
-        .replace(/"nan%"/g, '"N/A"'); // Replace "nan%" with "N/A"
+        .replace(/NaN/g, "null")
+        .replace(/"nan%"/g, '"N/A"');
+
+      // Handle simple string values with currency
+      if (sanitizedData.startsWith('"') && sanitizedData.endsWith('"')) {
+        const value = JSON.parse(sanitizedData);
+        if (value.startsWith("RM ")) {
+          const numericValue = parseFloat(value.replace("RM ", ""));
+          return (
+            <div className="textdata-current-list">
+              <div className="textdata-row">
+                <span className="textdata-quantity">
+                  RM{" "}
+                  {numericValue.toLocaleString("en-US", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
+                </span>
+              </div>
+            </div>
+          );
+        }
+        return (
+          <div className="textdata-current-list">
+            <div className="textdata-row">
+              <span className="textdata-quantity">{value}</span>
+            </div>
+          </div>
+        );
+      }
 
       const parsedData = JSON.parse(sanitizedData);
 
@@ -257,9 +284,14 @@ const Chat = () => {
                       ? value.toLocaleString()
                       : value.toString();
 
+                  // Skip key display if it's an empty string or just whitespace
+                  const showKey = key.trim().length > 0;
+
                   return (
                     <div key={key} className="textdata-row">
-                      <span className="textdata-name">{formattedKey}:</span>
+                      {showKey && (
+                        <span className="textdata-name">{formattedKey}:</span>
+                      )}
                       <span className="textdata-quantity">
                         {formattedValue}
                       </span>
@@ -287,9 +319,14 @@ const Chat = () => {
                   ? value.toLocaleString()
                   : value.toString();
 
+              // Skip key display if it's an empty string or just whitespace
+              const showKey = key.trim().length > 0;
+
               return (
                 <div key={idx} className="textdata-row">
-                  <span className="textdata-name">{formattedKey}:</span>
+                  {showKey && (
+                    <span className="textdata-name">{formattedKey}:</span>
+                  )}
                   <span className="textdata-quantity">{formattedValue}</span>
                 </div>
               );
@@ -373,7 +410,7 @@ const Chat = () => {
           <div className="language-dropdown-container">
             <div className="language-selector" onClick={toggleDropdown}>
               <span>{language}</span>
-              <ChevronDown size={16} />
+              <ChevronDown size={16} className="chevron" />
             </div>
             {dropdownOpen && (
               <div className="language-dropdown">

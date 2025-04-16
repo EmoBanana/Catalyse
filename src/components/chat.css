@@ -25,7 +25,7 @@
 .header {
   display: flex;
   flex-direction: row;
-  padding: 16px 10px;
+  padding: 4px 10px;
   padding-top: 2rem;
 }
 
@@ -40,8 +40,9 @@
 }
 
 .back-button span {
-  font-family: "Patrick";
-  font-size: 1rem;
+  font-family: "Medium";
+  font-size: 0.9rem;
+  font-weight: 600;
   margin-left: 6px;
 }
 
@@ -52,6 +53,7 @@
 }
 
 .profile {
+  font-family: "Patrick";
   margin-left: auto;
   display: flex;
   align-items: center;
@@ -100,7 +102,7 @@
   padding: 0 16px;
   margin-bottom: 16px;
   border-radius: 16px;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   line-height: 1rem;
   background-color: white;
   border: 2px solid black;
@@ -139,8 +141,13 @@
   border-radius: 12px;
   padding: 5px 10px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: black;
+  gap: 2px;
+}
+
+.chevron {
+  margin-top: 1px;
 }
 
 .language-dropdown {
@@ -163,13 +170,14 @@
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 14px;
-  font-family: "Patrick";
+  font-size: 0.7rem;
+  font-family: "Medium";
 }
 
 .language-options {
   max-height: 200px;
   overflow-y: auto;
+  font-size: 0.8rem;
 }
 
 .language-option {
@@ -193,14 +201,14 @@
   background-color: #fff;
   border: 2px solid black;
   border-radius: 18px;
-  padding: 10px 8px;
-  padding-bottom: 8px;
+  padding: 8px 8px;
+  padding-bottom: 10px;
   margin-bottom: 1rem;
 }
 
 .input {
-  font-family: "Patrick";
-  font-size: 1.1rem;
+  font-family: "Medium";
+  font-size: 0.9rem;
   flex: 1;
   border: none;
   background: transparent;
@@ -217,7 +225,7 @@
   border: none;
   background: none;
   cursor: pointer;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .dashboard-placeholder {
@@ -331,11 +339,11 @@
 
 .sales-card .status-title {
   font-size: 1.2rem;
-  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .sales-card .status-value {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: black;
   text-wrap: nowrap;
   white-space: pre-wrap;
@@ -343,8 +351,9 @@
 
 .sales-card .description {
   margin-top: 12px;
-  font-size: 1rem;
-  color: #333;
+  font-size: 0.9rem;
+  text-align: justify;
+  color: black;
   line-height: 1.4;
   white-space: pre-wrap;
 }
@@ -364,7 +373,7 @@
 
 .status-title {
   font-size: 1.2rem;
-  line-height: 0.1rem;
+  line-height: 2px;
 }
 
 .status-value {
@@ -383,6 +392,8 @@
 }
 
 .textdata-header {
+  font-size: 1.2rem;
+  font-weight: 600;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -399,6 +410,8 @@
 
 .textdata-description {
   white-space: pre-wrap;
+  font-size: 0.9rem;
+  text-align: justify;
 }
 
 .textdata-row {
@@ -408,12 +421,18 @@
 
 .textdata-name {
   font-weight: 500;
-  color: #666;
+  color: #444444;
 }
 
 .textdata-quantity {
   font-weight: 600;
-  color: #333;
+  color: black;
+}
+
+.textdata-quantity:first-child {
+  margin-left: 0.9rem;
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
 }
 
 .textdata-close-button {
@@ -486,8 +505,8 @@
 
 .graph-title {
   margin: 0;
-  font-size: 1.3rem;
-  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .close-button {
@@ -564,7 +583,8 @@
 .graph-description p {
   margin: 0;
   white-space: pre-line;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  text-align: justify;
   line-height: 1.5;
 }
 

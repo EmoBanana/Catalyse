@@ -5,6 +5,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Medium";
+  src: url("../Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../Futura.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .html,
 body {
   display: flex;
@@ -12,7 +26,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(to top right, #ffecb6, #ffffff);
-  font-family: "Patrick";
+  font-family: "Medium";
   overflow-y: hidden;
 }
 
@@ -22,7 +36,8 @@ body {
 }
 
 .login-title {
-  font-size: 3rem;
+  font-family: "Futura";
+  font-size: 2.8rem;
   text-align: center;
   margin-bottom: 10px;
   font-weight: 100;
@@ -31,13 +46,15 @@ body {
 .signup-text {
   text-align: center;
   margin-bottom: 1.6rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: #666;
 }
 
 .link-text {
   color: #1a73e8;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .input-group {
@@ -47,7 +64,8 @@ body {
 .input-group label {
   display: block;
   margin-bottom: 8px;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-weight: 800;
 }
 
 .phone-input-group {
@@ -59,8 +77,9 @@ body {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-family: "Patrick";
+  font-family: "Medium";
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .otp-button {
@@ -69,8 +88,9 @@ body {
   padding: 8px 12px;
   border-radius: 4px;
   cursor: pointer;
-  font-family: "Patrick";
-  font-size: 0.9rem;
+  font-family: "Medium";
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .input-group input[type="password"] {
@@ -88,13 +108,15 @@ body {
 }
 
 .remember-me label {
-  font-size: 1.1rem;
+  font-family: "Medium";
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .remember-me input[type="checkbox"] {
   margin-right: 0.4rem;
   vertical-align: middle;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .login-button {
@@ -107,13 +129,15 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
   margin-bottom: 20px;
-  font-family: "Patrick";
+  font-family: "Medium";
 }
 
 .divider {
   text-align: center;
   color: #999;
   margin-bottom: 20px;
+  font-family: "Medium";
+  font-weight: 600;
 }
 
 .social-button {
@@ -128,8 +152,8 @@ body {
   background-color: white;
   cursor: pointer;
   margin-bottom: 15px;
-  font-family: "Patrick";
-  font-size: 1.1rem;
+  font-family: "Medium";
+  font-size: 0.9rem;
 }
 
 .social-button img {

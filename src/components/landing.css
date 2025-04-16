@@ -6,6 +6,13 @@
 }
 
 @font-face {
+  font-family: "Medium";
+  src: url("../Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Futura";
   src: url("../Futura.ttf") format("truetype");
   font-weight: normal;
@@ -77,10 +84,11 @@
 
 .button {
   background-color: white;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 8px;
-  padding: 12px 30px;
+  padding: 5px 30px;
   margin-top: 0.8rem;
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,10 +98,13 @@
 
 .button-text {
   font-size: 24px;
+  font-style: italic;
   margin-right: 10px;
-  font-family: "Patrick";
+  font-family: "Futura";
 }
 
 .button-arrow {
+  font-family: "Patrick";
   font-size: 28px;
+  font-weight: 1000;
 }
