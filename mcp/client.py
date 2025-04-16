@@ -37,11 +37,11 @@ class NormalContainer(BaseModel):
 
 
 model = ChatOpenAI(model="gpt-4o", 
-    api_key="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")
+    api_key="")
 
 embedding_model = OpenAIEmbeddings(
     model="text-embedding-3-small",
-    openai_api_key="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"
+    openai_api_key=""
 )
 
 store = InMemoryStore(
