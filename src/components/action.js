@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Menu } from "react-feather";
 import "./action.css";
+import menuData from "./menu.json";
 
 const Action = ({ setShowNav }) => {
   const navigate = useNavigate();
@@ -100,6 +101,45 @@ const Action = ({ setShowNav }) => {
             }
           }}
         />
+      </div>
+
+      <div className="action-menu">
+        <div className="menu-header">
+          <h1>Menu</h1>
+        </div>
+        <div className="menu-scroll-container">
+          <div className="menu-cards-row">
+            {menuData.newMenu.map((item, index) => (
+              <div key={index} className="newmenu-card">
+                <img
+                  src={`/${item.image}`}
+                  alt={item.title}
+                  className="menu-image"
+                />
+                <h2 className="menu-title">{item.title}</h2>
+                <div className="menu-details">
+                  <p className="menu-genre">{item.genre}</p>
+                  <p className="menu-price">{item.price}</p>
+                </div>
+              </div>
+            ))}
+
+            {menuData.existingMenu.map((item, index) => (
+              <div key={index} className="menu-card">
+                <img
+                  src={`/${item.image}`}
+                  alt={item.title}
+                  className="menu-image"
+                />
+                <h2 className="menu-title">{item.title}</h2>
+                <div className="menu-details">
+                  <p className="menu-genre">{item.genre}</p>
+                  <p className="menu-price">{item.price}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

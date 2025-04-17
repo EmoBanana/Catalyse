@@ -1,0 +1,42 @@
+{
+  "existingMenu": [
+    {
+      "image": "fried_chicken.jpg",
+      "title": "Fried Chicken",
+      "genre": "Main",
+      "price": "RM 6.00"
+    },
+    {
+      "image": "4piece.jpg",
+      "title": "4-Piece Chicken Meal",
+      "genre": "Sides",
+      "price": "RM 8.00"
+    },
+    {
+      "image": "chickenwaffle.jpg",
+      "title": "Chicken & Waffles",
+      "genre": "Sides",
+      "price": "RM 6.00"
+    },
+    {
+      "image": "spicy.jpg",
+      "title": "Spicy Chicken Tenders",
+      "genre": "Sides",
+      "price": "RM 5.00"
+    },
+    {
+      "image": "wedges.jpg",
+      "title": "Potato Wedges",
+      "genre": "Sides",
+      "price": "RM 3.00"
+    }
+  ],
+  "newMenu": [
+    {
+      "image": "spicy_wings.jpg",
+      "title": "Spicy Chicken Wings",
+      "genre": "Main",
+      "price": "RM 5.00"
+    }
+  ]
+}
