@@ -1,0 +1,103 @@
+.action-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.action-header {
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 0;
+  z-index: 10;
+}
+
+.action-profile {
+  font-family: "Patrick";
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.action-profile h2 {
+  font-size: 1rem;
+  font-weight: 100;
+  margin-right: 0.4rem;
+  line-height: 0.2rem;
+}
+
+.action-nav {
+  margin-left: 1rem;
+  margin-top: 0.8rem;
+}
+
+.action-calendar {
+  flex: 1;
+  padding: 20px;
+  overflow-y: visible;
+  max-height: 50vh;
+  background-color: white;
+  margin: 0rem;
+  border-radius: 12px;
+  border: 2px solid black;
+}
+
+.calendar {
+  flex: 1;
+  min-height: 0;
+  background-color: white;
+}
+
+.action-calendar .fc {
+  width: 80vw;
+}
+
+.fc-toolbar.fc-header-toolbar .fc-toolbar-chunk:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+.fc-toolbar.fc-header-toolbar .fc-button {
+  background-color: #ffecb6;
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+}
+
+.fc-toolbar.fc-header-toolbar .fc-today-button {
+  font-size: 1rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  color: black;
+}
+
+.action-calendar .fc-scrollgrid thead {
+  background-color: #ffecb6;
+}
+
+.has-event {
+  background-color: #e0f1ff;
+  position: relative;
+}
+
+.event-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #007bff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.4rem;
+  left: 0.7rem;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.fc-daygrid-day-bottom {
+  display: none;
+}
+
+.fc-daygrid-day-frame {
+  height: 2px;
+}
