@@ -27,7 +27,7 @@ body {
   min-height: 100vh;
   background: linear-gradient(to top right, #ffecb6, #ffffff);
   font-family: "Medium";
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .form-wrapper {

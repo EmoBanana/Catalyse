@@ -1,15 +1,16 @@
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import googleCalendarPlugin from "@fullcalendar/google-calendar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Menu } from "react-feather";
+import { Menu, X } from "react-feather";
 import "./action.css";
 import menuData from "./menu.json";
 
 const Action = ({ setShowNav }) => {
   const navigate = useNavigate();
   const { id } = useParams();
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleLogout = () => {
     const confirmLogout = window.confirm("Are you sure you want to log out?");
@@ -18,12 +19,19 @@ const Action = ({ setShowNav }) => {
     }
   };
 
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
   useEffect(() => {
     const handler = (e) => {
       const dayCell = e.target.closest(".fc-daygrid-day");
       if (!dayCell) return;
 
-      // Look for the hidden "+ more" link
       const moreLink = dayCell.querySelector(".fc-daygrid-more-link");
       if (moreLink) moreLink.click();
     };
@@ -115,6 +123,7 @@ const Action = ({ setShowNav }) => {
                   src={`/${item.image}`}
                   alt={item.title}
                   className="menu-image"
+                  onClick={() => handleImageClick(item.image)}
                 />
                 <h2 className="menu-title">{item.title}</h2>
                 <div className="menu-details">
@@ -130,6 +139,7 @@ const Action = ({ setShowNav }) => {
                   src={`/${item.image}`}
                   alt={item.title}
                   className="menu-image"
+                  onClick={() => handleImageClick(item.image)}
                 />
                 <h2 className="menu-title">{item.title}</h2>
                 <div className="menu-details">
@@ -141,6 +151,26 @@ const Action = ({ setShowNav }) => {
           </div>
         </div>
       </div>
+
+      {selectedImage && (
+        <div className="action-image-modal-overlay" onClick={closeModal}>
+          <div
+            className="action-image-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <X
+              size={24}
+              className="action-modal-close-button"
+              onClick={closeModal}
+            />
+            <img
+              src={`/${selectedImage}`}
+              alt="Expanded"
+              className="action-modal-image"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

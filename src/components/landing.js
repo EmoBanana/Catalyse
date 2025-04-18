@@ -21,6 +21,7 @@ const Landing = () => {
         <p className="tagline">
           <span>Meow</span>-nitoring insights that drive business growth
         </p>
+        <img className="tail" src="/tail.png"></img>
       </div>
 
       <div className="image-container">

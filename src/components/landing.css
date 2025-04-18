@@ -70,6 +70,13 @@
   transform: rotate(20deg);
 }
 
+.tail {
+  height: 7.5rem;
+  position: absolute;
+  top: 2.6rem;
+  left: 16.5rem;
+}
+
 .image-container {
   display: flex;
   justify-content: center;
