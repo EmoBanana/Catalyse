@@ -30,16 +30,32 @@ With Catalyse, you don’t just *analyse* — you **catalyse** your business gro
   - Interactive graphs and expandable data cards let you explore details on demand.
 
 - **Merchant-Specific Insights**:
-  - Each merchant has a personalized dashboard reflecting their business data.
+  - Each merchant has a personalised dashboard reflecting their business data.
   - Supports focused decision-making with precise, relevant insights.
+ 
+- **Actions Page**
+  - Integrated with Google Calendar to track business-related events.
+  Merchants can ask the chatbot to generate event plans (e.g., a one-week timeline for a product launch), which will be automatically added to the calendar.
+  - Includes a menu section that displays current menu items; new items suggested by the chatbot appear first and await merchant approval
+
+- **Analytics Page**
+  - View forecasting graphs powered by Prophet for predictive, data-driven decisions.
+  - Dive into sentiment analytics with:
+    - A distribution chart of positive, neutral, and negative reviews
+    - Word clouds highlighting key terms from positive and negative feedback
 
 - **Responsive Design**:
   - Enjoy a smooth experience across devices — from mobile to desktop.
   - Seamless transitions between chat and dashboard views.
 
+## Basic Troubleshooting
+
 ## Powered by Machine Learning
 
-Catalyse leverages a custom ML model trained on a synthetic business dataset to generate insightful recommendations and alerts. The system continuously adapts to provide smarter suggestions the more you use it.
+Catalyse leverages a custom ML model trained on a synthetic business dataset to deliver smart recommendations and adaptive insights. 
+- **The Model Content Protocol (MCP)** ensures that the AI system remains context-aware, retaining relevant business and user information across interactions for more coherent, on-point suggestions.
+- **Meta Prophet** powers our forecasting capabilities, providing accurate trend predictions through detailed graphs, enabling merchants to make proactive, data-backed decisions. 
+The system evolves with usage, continuously learning and fine-tuning its responses to better align with each merchant's unique operations.
 
 ## Why Catalyse?
 
