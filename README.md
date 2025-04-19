@@ -53,10 +53,19 @@ With Catalyse, you don’t just *analyse* — you **catalyse** your business gro
 ## Powered by Machine Learning
 
 Catalyse leverages a custom ML model trained on a synthetic business dataset to deliver smart recommendations and adaptive insights. 
-- **The Model Content Protocol (MCP)** ensures that the AI system remains context-aware, retaining relevant business and user information across interactions for more coherent, on-point suggestions.
 - **Meta Prophet** powers our forecasting capabilities, providing accurate trend predictions through detailed graphs, enabling merchants to make proactive, data-backed decisions.
+- Sentiment analysis transforms customer reviews into actionable insights with distribution charts and keyword-focused word clouds
 
 The system evolves with usage, continuously learning and fine-tuning its responses to better align with each merchant's unique operations.
+
+## Supported by **Model Context Protocol (MCP)**
+
+Catalyse is enhanced by the **Model Context Protocol (MCP)** to enable seamless, context-aware AI interactions across features.
+- **Standardised Connectivity**: Allows the AI to interact with external tools and services through a unified protocol.
+- **Context Retention**: Maintains awareness of ongoing tasks, ensuring consistent and relevant responses.
+- **Scalable Integration**: Easily connects to tools like calendars, databases, and content systems to enhance functionality.
+
+MCP ensures that every 
 
 ## Why Catalyse?
 
