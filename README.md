@@ -1,4 +1,4 @@
-# 🐈Catalyse
+# 😼Catalyse
 *Meow-nitoring insights that drive business growth*
 
 **Cat? Analyse?** That's right — **Catalyse** is a playful yet powerful analytics platform designed to deliver real-time business insights through an intuitive chat interface and dynamic dashboards. Whether you're a merchant looking to grow or a manager tracking market trends, Catalyse helps you *pounce* on opportunities faster than ever.
@@ -55,7 +55,7 @@ With Catalyse, you don’t just *analyse* — you **catalyse** your business gro
 Catalyse leverages a custom ML model trained on a synthetic business dataset to deliver smart recommendations and adaptive insights. 
 - **The Model Content Protocol (MCP)** ensures that the AI system remains context-aware, retaining relevant business and user information across interactions for more coherent, on-point suggestions.
 - **Meta Prophet** powers our forecasting capabilities, providing accurate trend predictions through detailed graphs, enabling merchants to make proactive, data-backed decisions.
-- 
+
 The system evolves with usage, continuously learning and fine-tuning its responses to better align with each merchant's unique operations.
 
 ## Why Catalyse?
