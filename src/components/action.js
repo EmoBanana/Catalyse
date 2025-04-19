@@ -17,11 +17,11 @@ const Action = ({ setShowNav }) => {
     if (confirmLogout) {
       navigate("/login");
     }
-  };
+  }; // Logout function to navigate back to login page
 
   const handleImageClick = (image) => {
     setSelectedImage(image);
-  };
+  }; // Show the image in a modal when clicked
 
   const closeModal = () => {
     setSelectedImage(null);
@@ -34,7 +34,7 @@ const Action = ({ setShowNav }) => {
 
       const moreLink = dayCell.querySelector(".fc-daygrid-more-link");
       if (moreLink) moreLink.click();
-    };
+    }; // Click handler for the calendar to open the event details
 
     document
       .querySelector(".fc-daygrid-body")
@@ -45,7 +45,7 @@ const Action = ({ setShowNav }) => {
         .querySelector(".fc-daygrid-body")
         ?.removeEventListener("click", handler);
     };
-  }, []);
+  }, []); // Event listener to open the event details when clicked
 
   return (
     <div className="action-container">
@@ -85,7 +85,7 @@ const Action = ({ setShowNav }) => {
           className="calendar"
           plugins={[dayGridPlugin, googleCalendarPlugin]}
           initialView="dayGridMonth"
-          googleCalendarApiKey="AIzaSyB5oltuq_EXN0Gx_lo6jo8idtA0EtT0nII"
+          googleCalendarApiKey=""
           events={{
             googleCalendarId:
               "1fcbaedeedb15f25a1c8e71ad79eded5f1a118c95cf4c32f091ce736c140e41d@group.calendar.google.com",

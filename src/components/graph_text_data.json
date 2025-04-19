@@ -12,7 +12,7 @@
     "description": "\ud83d\udcc8 Summary: Orders peak early in the morning and again in the early evening.\n\n\ud83d\udd0d Key Observations:\n- The busiest hour is 6 AM with the most orders.\n- There\u2019s a dip in orders around midday and afternoon.\n- Orders pick up again after 5 PM and stay high until around 9 PM.\n\n\u2705 Tip for Action: Be ready with more food and staff for busy times at early morning and evening to serve customers faster."
   },
   {
-    "title": "item_order_perhour",
+    "title": "item_order_per_hour",
     "image_path": "multi_day_hourly.png",
     "current_data": "{\"order_count\": 325}",
     "description": "\ud83d\udcc8 Summary: Orders stay busy all week with some ups and downs at different times each day.\n\n\ud83d\udd0d Key Observations:\n- Most days have higher orders in the morning and evening.\n- Sunday and Saturday show some of the highest order numbers, especially in the evening.\n- Weekdays dip a bit in early afternoon but pick back up later.\n\n\u2705 Tip for Action: Focus on staff and food prep for busy weekend evenings and keep good service on weekday mornings to catch steady orders."
