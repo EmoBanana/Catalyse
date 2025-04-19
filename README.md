@@ -65,7 +65,7 @@ Catalyse is enhanced by the **Model Context Protocol (MCP)** to enable seamless,
 - **Context Retention**: Maintains awareness of ongoing tasks, ensuring consistent and relevant responses.
 - **Scalable Integration**: Easily connects to tools like calendars, databases, and content systems to enhance functionality.
 
-MCP ensures that every 
+MCP ensures that every AI interaction in Catalyse feels smart, relevant, and securely integrated.
 
 ## Why Catalyse?
 
