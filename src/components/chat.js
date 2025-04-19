@@ -27,53 +27,11 @@ const Chat = () => {
   const [expandedTextData, setExpandedTextData] = useState(null);
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [language, setLanguage] = useState("English");
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
   const [showNav, setShowNav] = useState(false);
   const [showML, setShowML] = useState(false);
   const [showAction, setShowAction] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
-
-  // List of languages
-  const languages = [
-    "English",
-    "Spanish",
-    "French",
-    "German",
-    "Chinese",
-    "Japanese",
-    "Korean",
-    "Russian",
-    "Arabic",
-    "Hindi",
-    "Portuguese",
-    "Italian",
-    "Dutch",
-    "Swedish",
-    "Finnish",
-    "Norwegian",
-    "Danish",
-    "Polish",
-    "Turkish",
-    "Greek",
-    "Hebrew",
-    "Thai",
-    "Vietnamese",
-    "Indonesian",
-    "Malay",
-    "Filipino",
-    "Bengali",
-    "Urdu",
-    "Persian",
-    "Swahili",
-  ];
-
-  // Filtered languages based on search term
-  const filteredLanguages = languages.filter((lang) =>
-    lang.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   const handleSend = async () => {
     if (!message.trim()) return;
@@ -183,38 +141,6 @@ const Chat = () => {
   const handleCardClick = (index) => {
     setExpandedCard(expandedCard === index ? null : index);
   }; // Show or hide description of the sales highlight report when clicked
-
-  const toggleDropdown = (e) => {
-    e.stopPropagation();
-    setDropdownOpen(!dropdownOpen);
-    if (!dropdownOpen) {
-      setSearchTerm("");
-    }
-  }; // Handle language dropdown click
-
-  const selectLanguage = (lang) => {
-    setLanguage(lang);
-    setDropdownOpen(false);
-    setSearchTerm("");
-  }; // Handle language selection
-
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-  }; // Handle search term change
-
-  useEffect(() => {
-    const handleClickOutside = () => {
-      setDropdownOpen(false);
-    };
-
-    if (dropdownOpen) {
-      document.addEventListener("click", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [dropdownOpen]); // Close dropdown when clicking outside
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -459,38 +385,6 @@ const Chat = () => {
             </div>
 
             <div className="input-area">
-              <div className="language-dropdown-container">
-                <div className="language-selector" onClick={toggleDropdown}>
-                  <span>{language}</span>
-                  <ChevronDown size={16} className="chevron" />
-                </div>
-                {dropdownOpen && (
-                  <div className="language-dropdown">
-                    <div className="language-search">
-                      <input
-                        type="text"
-                        placeholder="Search language..."
-                        value={searchTerm}
-                        onChange={handleSearchChange}
-                        onClick={(e) => e.stopPropagation()}
-                      />
-                    </div>
-                    <div className="language-options">
-                      {filteredLanguages.slice(0, 300).map((lang, index) => (
-                        <div
-                          key={index}
-                          className={`language-option ${
-                            language === lang ? "selected" : ""
-                          }`}
-                          onClick={() => selectLanguage(lang)}
-                        >
-                          {lang}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
               <div className="message-input-container">
                 <button className="action-button">
                   <Plus size={20} />
@@ -500,7 +394,7 @@ const Chat = () => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder={`Ask Anything in ${language}`}
+                  placeholder={`Ask Anything`}
                 />
                 <button
                   className="action-button send-button"

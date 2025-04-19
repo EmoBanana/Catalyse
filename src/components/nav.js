@@ -31,12 +31,12 @@ const Navigation = ({ setShowNav, setShowML, setShowAction }) => {
               setShowML(true);
             }}
           >
-            <h2>Machine Learning</h2>
-            <p>View ML insights and analytics</p>
+            <h2>Analytics</h2>
+            <p>View Forecasting and Sentiments Analytics</p>
           </div>
           <div className="nav-option" onClick={() => chat()}>
             <h2>Chat</h2>
-            <p>Talk with our AI assistant</p>
+            <p>Talk With Our AI Assistant</p>
           </div>
           <div
             className="nav-option"
@@ -47,7 +47,7 @@ const Navigation = ({ setShowNav, setShowML, setShowAction }) => {
             }}
           >
             <h2>Actions</h2>
-            <p>Perform business actions</p>
+            <p>Perform Business Actions</p>
           </div>
         </div>
       </div>
