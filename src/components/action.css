@@ -173,6 +173,10 @@
 .menu-details {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+}
+
+.newmenu-card .menu-details {
   justify-content: space-between;
 }
 

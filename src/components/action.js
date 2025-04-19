@@ -85,7 +85,7 @@ const Action = ({ setShowNav }) => {
           className="calendar"
           plugins={[dayGridPlugin, googleCalendarPlugin]}
           initialView="dayGridMonth"
-          googleCalendarApiKey=""
+          googleCalendarApiKey="AIzaSyB5oltuq_EXN0Gx_lo6jo8idtA0EtT0nII"
           events={{
             googleCalendarId:
               "1fcbaedeedb15f25a1c8e71ad79eded5f1a118c95cf4c32f091ce736c140e41d@group.calendar.google.com",
