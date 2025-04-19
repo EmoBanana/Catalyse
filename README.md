@@ -50,6 +50,25 @@ With Catalyse, you don’t just *analyse* — you **catalyse** your business gro
 
 ## Basic Troubleshooting
 
+**Issue:** `ModuleNotFoundError` or missing packages  
+**Solution:**  
+Run `npm install` or `pip install -r requirements.txt`.  
+Ensure you’re in the correct directory.
+
+**Issue:** App fails to connect to API/backend  
+**Solution:**  
+Create a `.env` file with the required keys. Check `.env.example` for reference.  
+Ensure variables like `API_KEY`, `BACKEND_URL`, or `OPENAI_API_KEY` are defined.
+
+**Issue:** AI Model is not generating responses  
+**Solution:**  
+- Check your internet connection.  
+- Make sure your API key is valid and not rate-limited.  
+
+**Issue:** Chat window not responding or stuck  
+**Solution:**  
+- Refresh the app 
+
 ## Powered by Machine Learning
 
 Catalyse leverages a custom ML model trained on a synthetic business dataset to deliver smart recommendations and adaptive insights. 
