@@ -8,6 +8,7 @@ const Chat = ({ setShowNav }) => {
   const [expandedGraph, setExpandedGraph] = useState(null);
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [imageSelected, setImageSelected] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -37,6 +38,14 @@ const Chat = ({ setShowNav }) => {
     setImageModalOpen(false);
     setSelectedImage(null);
   }; //Close the image modal when clicked outside of the image
+
+  const imageClick = (image) => {
+    setImageSelected(image);
+  };
+
+  const closeModal = () => {
+    setImageSelected(null);
+  };
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -189,7 +198,7 @@ const Chat = ({ setShowNav }) => {
                   src={`/${item.image}`}
                   alt={item.title}
                   className="ml-menu-image"
-                  onClick={() => handleImageClick(item.image)} // Handle image click
+                  onClick={() => imageClick(item.image)} // Handle image click
                 />
               </div>
             ))}
@@ -210,6 +219,26 @@ const Chat = ({ setShowNav }) => {
               src={`/${selectedImage}`}
               alt="Enlarged graph"
               className="modal-image"
+            />
+          </div>
+        </div>
+      )}
+
+      {imageSelected && (
+        <div className="action-image-modal-overlay" onClick={closeModal}>
+          <div
+            className="action-image-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <X
+              size={24}
+              className="ml-modal-close-button"
+              onClick={closeModal}
+            />
+            <img
+              src={`/${imageSelected}`}
+              alt="Expanded"
+              className="action-modal-image"
             />
           </div>
         </div>
