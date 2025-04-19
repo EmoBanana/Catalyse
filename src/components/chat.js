@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./chat.css";
 import graphData from "./graph_text_data.json";
 import textData from "./text_data.json";
-import alertData from "./alerts.json";
+import alertData from "./bottleneck_opportunity.json";
 import Navigation from "./nav";
 import MachineLearning from "./ml";
 import Action from "./action";
@@ -270,6 +270,16 @@ const Chat = () => {
 
       const parsedData = JSON.parse(sanitizedData);
 
+      // Helper function to format numbers intelligently
+      const formatNumber = (num) => {
+        if (num === null || (typeof num === "number" && isNaN(num))) {
+          return "N/A";
+        }
+
+        // Check if number has decimal places
+        return Number.isInteger(num) ? num.toString() : num.toFixed(2);
+      };
+
       if (Array.isArray(parsedData)) {
         return (
           <div className="textdata-current-list">
@@ -282,13 +292,25 @@ const Chat = () => {
                     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
                     .join(" ");
 
-                  const formattedValue =
+                  // Format the value
+                  let formattedValue;
+                  if (
                     value === null ||
                     (typeof value === "number" && isNaN(value))
-                      ? "N/A"
-                      : typeof value === "number"
-                      ? value.toLocaleString()
-                      : value.toString();
+                  ) {
+                    formattedValue = "N/A";
+                  } else if (typeof value === "number") {
+                    formattedValue = formatNumber(value);
+                  } else if (Array.isArray(value)) {
+                    // Format each number in the array properly
+                    formattedValue = value
+                      .map((item) =>
+                        typeof item === "number" ? formatNumber(item) : item
+                      )
+                      .join(", ");
+                  } else {
+                    formattedValue = value.toString();
+                  }
 
                   // Skip key display if it's an empty string or just whitespace
                   const showKey = key.trim().length > 0;
@@ -318,14 +340,26 @@ const Chat = () => {
                 .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
                 .join(" ");
 
-              const formattedValue =
-                value === null || (typeof value === "number" && isNaN(value))
-                  ? "N/A"
-                  : typeof value === "number"
-                  ? value.toLocaleString()
-                  : value.toString();
+              // Format the value
+              let formattedValue;
+              if (
+                value === null ||
+                (typeof value === "number" && isNaN(value))
+              ) {
+                formattedValue = "N/A";
+              } else if (typeof value === "number") {
+                formattedValue = formatNumber(value);
+              } else if (Array.isArray(value)) {
+                // Format each number in the array properly
+                formattedValue = value
+                  .map((item) =>
+                    typeof item === "number" ? formatNumber(item) : item
+                  )
+                  .join(", ");
+              } else {
+                formattedValue = value.toString();
+              }
 
-              // Skip key display if it's an empty string or just whitespace
               const showKey = key.trim().length > 0;
 
               return (

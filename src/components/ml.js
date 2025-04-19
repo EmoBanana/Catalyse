@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "react-feather";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ml.css";
-import graphData from "./graph_text_data.json";
-import menuData from "./menu.json";
+import mlData from "./machine_learning_data.json";
 
 const Chat = ({ setShowNav }) => {
   const [expandedGraph, setExpandedGraph] = useState(null);
@@ -57,114 +56,34 @@ const Chat = ({ setShowNav }) => {
       .join(" ");
   };
 
-  const formatCurrentData = (data) => {
+  const formatCurrentData = (data, title) => {
     try {
-      const sanitizedData = data
-        .replace(/NaN/g, "null")
-        .replace(/"nan%"/g, '"N/A"');
+      // Check if it's JSON format
+      if (data.startsWith("{")) {
+        const parsed = JSON.parse(data);
 
-      // Handle simple string values with currency
-      if (sanitizedData.startsWith('"') && sanitizedData.endsWith('"')) {
-        const value = JSON.parse(sanitizedData);
-        if (value.startsWith("RM ")) {
-          const numericValue = parseFloat(value.replace("RM ", ""));
-          return (
-            <div className="textdata-current-list">
-              <div className="textdata-row">
-                <span className="textdata-quantity">
-                  RM{" "}
-                  {numericValue.toLocaleString("en-US", {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}
-                </span>
-              </div>
-            </div>
-          );
+        // Add RM prefix only for "monthly_income"
+        if (title === "monthly_income" && parsed.yhat) {
+          return `RM ${parseFloat(parsed.yhat).toFixed(2)}`;
         }
-        return (
-          <div className="textdata-current-list">
-            <div className="textdata-row">
-              <span className="textdata-quantity">{value}</span>
-            </div>
-          </div>
-        );
+
+        // Return parsed yhat value without RM prefix for other cases
+        if (parsed.yhat) {
+          return `${parseFloat(parsed.yhat).toFixed(2)}`;
+        }
+
+        return data;
       }
 
-      const parsedData = JSON.parse(sanitizedData);
-
-      if (Array.isArray(parsedData)) {
-        return (
-          <div className="textdata-current-list">
-            {parsedData.map((item, idx) => (
-              <div key={idx} className="textdata-item">
-                {Object.entries(item).map(([key, value]) => {
-                  const formattedKey = key
-                    .replace(/_/g, " ")
-                    .split(" ")
-                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(" ");
-
-                  const formattedValue =
-                    value === null ||
-                    (typeof value === "number" && isNaN(value))
-                      ? "N/A"
-                      : typeof value === "number"
-                      ? value.toLocaleString()
-                      : value.toString();
-
-                  // Skip key display if it's an empty string or just whitespace
-                  const showKey = key.trim().length > 0;
-
-                  return (
-                    <div key={key} className="textdata-row">
-                      {showKey && (
-                        <span className="textdata-name">{formattedKey}:</span>
-                      )}
-                      <span className="textdata-quantity">
-                        {formattedValue}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
-        );
-      } else if (typeof parsedData === "object") {
-        return (
-          <div className="textdata-current-list">
-            {Object.entries(parsedData).map(([key, value], idx) => {
-              const formattedKey = key
-                .replace(/_/g, " ")
-                .split(" ")
-                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(" ");
-
-              const formattedValue =
-                value === null || (typeof value === "number" && isNaN(value))
-                  ? "N/A"
-                  : typeof value === "number"
-                  ? value.toLocaleString()
-                  : value.toString();
-
-              // Skip key display if it's an empty string or just whitespace
-              const showKey = key.trim().length > 0;
-
-              return (
-                <div key={idx} className="textdata-row">
-                  {showKey && (
-                    <span className="textdata-name">{formattedKey}:</span>
-                  )}
-                  <span className="textdata-quantity">{formattedValue}</span>
-                </div>
-              );
-            })}
-          </div>
-        );
+      // Check if it's already in RM format
+      else if (data.startsWith("RM")) {
+        const value = parseFloat(data.replace("RM ", ""));
+        return `RM ${value.toFixed(2)}`;
       }
-    } catch (error) {
-      return <div>Error parsing data</div>;
+
+      return data;
+    } catch (e) {
+      return data;
     }
   };
 
@@ -201,8 +120,12 @@ const Chat = ({ setShowNav }) => {
         </div>
       </div>
 
+      <div className="ml-header-container">
+        <h1 className="ml-header">Forecasting Analytics</h1>
+      </div>
+
       <div className="ml-graphs">
-        {graphData.map((graph, index) => (
+        {mlData.MachineLearning.map((graph, index) => (
           <div
             key={index}
             className={`graph-card ${
@@ -240,7 +163,7 @@ const Chat = ({ setShowNav }) => {
                 <div className="graph-details">
                   <div className="current-data">
                     <h4>Current Status:</h4>
-                    {formatCurrentData(graph.current_data)}
+                    {formatCurrentData(graph.current_data, graph.title)}
                   </div>
                   <div className="graph-description">
                     <h4>Analysis:</h4>
@@ -255,39 +178,19 @@ const Chat = ({ setShowNav }) => {
 
       <div className="action-menu">
         <div className="menu-header">
-          <h1>Menu</h1>
+          <h1>Sentiments Analytics</h1>
         </div>
         <div className="menu-scroll-container">
           <div className="menu-cards-row">
-            {menuData.newMenu.map((item, index) => (
-              <div key={index} className="newmenu-card">
-                <img
-                  src={`/${item.image}`}
-                  alt={item.title}
-                  className="menu-image"
-                  onClick={() => handleImageClick(item.image)} // Handle image click
-                />
-                <h2 className="menu-title">{item.title}</h2>
-                <div className="menu-details">
-                  <p className="menu-genre">{item.genre}</p>
-                  <p className="menu-price">{item.price}</p>
-                </div>
-              </div>
-            ))}
-
-            {menuData.existingMenu.map((item, index) => (
+            {mlData.TextAnalytics.map((item, index) => (
               <div key={index} className="menu-card">
+                <h2 className="ml-menu-title">{item.title}</h2>
                 <img
                   src={`/${item.image}`}
                   alt={item.title}
-                  className="menu-image"
+                  className="ml-menu-image"
                   onClick={() => handleImageClick(item.image)} // Handle image click
                 />
-                <h2 className="menu-title">{item.title}</h2>
-                <div className="menu-details">
-                  <p className="menu-genre">{item.genre}</p>
-                  <p className="menu-price">{item.price}</p>
-                </div>
               </div>
             ))}
           </div>

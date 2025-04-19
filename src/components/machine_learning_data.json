@@ -1,0 +1,66 @@
+{
+  "MachineLearning": [
+    {
+      "title": "4-Piece Chicken Meal Forecast",
+      "image_path": "forecast_4-Piece_Chicken_Meal_Fried_Chicken.png",
+      "current_data": "RM 17586.57",
+      "description": "\ud83d\udcc8 Summary: The sales for your 4-piece fried chicken meals are expected to slowly go down over the next year.  \n\ud83d\udd0d Key Observations: The highest predicted sales are around early months, close to 20,000 pieces, but by the end of the forecast, it drops to about 17,500 or less. This steady decline might be due to seasonal changes or less demand as time passes.  \n\u2705 Tip for Action: Consider introducing promotions or new meal options later in the year to keep customer interest high and boost sales."
+    },
+    {
+      "title": "Chicken & Waffles Forecast",
+      "image_path": "forecast_Chicken_&_Waffles_Fried_Chicken.png",
+      "current_data": "RM 8533.1",
+      "description": "\ud83d\udcc8 Summary: Sales of fried chicken at your Chicken & Waffles stall are expected to slowly go down over the next year.  \n\ud83d\udd0d Key Observations: The highest predicted sales are near the start of this year, close to 9,000 pieces, and the lowest are toward the end, just above 8,500. There\u2019s a steady, gentle drop month by month without any sharp spikes or big changes.  \n\u2705 Tip for Action: Consider planning slightly smaller batches over time to avoid extra leftovers as demand drops."
+    },
+    {
+      "title": "Spicy Chicken Tenders Forecast",
+      "image_path": "forecast_Spicy_Chicken_Tenders_Fried_Chicken.png",
+      "current_data": "RM 4623.77",
+      "description": "\ud83d\udcc8 Summary: Sales of spicy chicken tenders are expected to slowly go down over the next year.  \n\ud83d\udd0d Key Observations: The highest predicted sales appear near the start of the year, around 6,500 pieces, while the lowest come towards the end, closer to 4,000 pieces. There\u2019s a steady decrease in how many customers are likely to buy over time.  \n\u2705 Tip for Action: Consider adjusting your supply and maybe planning some promotions later in the year to keep sales from dropping too much."
+    },
+    {
+      "title": "Potato Wedges Forecast",
+      "image_path": "forecast_Potato_Wedges_Side.png",
+      "current_data": "RM 17677.66",
+      "description": "\ud83d\udcc8 Summary: Potato wedge sales are expected to slightly go down over the next several months.  \n\ud83d\udd0d Key Observations: The highest sales were around early this year, close to 18,200 units, and the lowest predicted sales are around 17,600 units a few months later. There's no big sudden change, just a gentle decline.  \n\u2705 Tip for Action: Prepare a bit less stock over time to avoid waste, but keep an eye on weekends or special days when sales might rise."
+    },
+    {
+      "title": "customer_forecast_new",
+      "image_path": "customer_forecast_new.png",
+      "current_data": "{\"yhat\": 3107.161347947598}",
+      "description": "\ud83d\udcc8 Summary: The number of new customers is expected to slowly grow over the coming months.  \n\ud83d\udd0d Key Observations: The lowest points show just under 2900 new customers and the highest around 3200 by early next year. The upward trend is gentle and steady with no sudden jumps or drops. The black dots show past new customer counts, which mostly follow this steady rise.  \n\u2705 Tip for Action: Prepare to welcome a bit more new customers gradually by keeping your stock and staff ready, especially towards the end of the year."
+    },
+    {
+      "title": "customer_forecast_recc",
+      "image_path": "customer_forecast_rec.png",
+      "current_data": "{\"yhat\": 31.366322750391074}",
+      "description": "\ud83d\udcc8 Summary: The number of returning customers is expected to slowly go down over the next several months.\n\n\ud83d\udd0d Key Observations: The highest predicted returning customers were around early 2023, close to 35-40, while the lowest predictions are closer to 25-30 by early 2024. There is some uncertainty shown by the shaded area, but the overall trend is gently downward.\n\n\u2705 Tip for Action: To keep your regulars coming back, try reaching out with loyalty offers or special deals during slower months to slow down this drop."
+    },
+    {
+      "title": "monthly_income",
+      "image_path": "forecast_income.png",
+      "current_data": "{\"yhat\": 357647.99934189423}",
+      "description": "\ud83d\udcc8 Summary: Your total income is expected to slowly go down over the next year.\n\n\ud83d\udd0d Key Observations: The highest income was earlier this year, around January or February, while the lowest is predicted near the start of next year. The drop each month is steady without sudden spikes. There\u2019s a bit of uncertainty in the range, but the overall trend points down.\n\n\u2705 Tip for Action: Consider finding ways to attract more customers or introduce new items to keep your income steady as it looks like sales could drop gradually."
+    },
+    {
+      "title": "order_forecast",
+      "image_path": "forecast_orders.png",
+      "current_data": "{\"yhat\": 3137.603655215471}",
+      "description": "\ud83d\udcc8 Summary: Your sales are expected to slowly increase over the next year.  \n\ud83d\udd0d Key Observations: The lowest predicted orders are around 2950 and the highest could reach about 3200 monthly orders. There are no sudden changes, just a steady upward trend. The tiny dots show past orders, which mostly match the steady growth pattern.  \n\u2705 Tip for Action: Start preparing for a gradual increase in customers by stocking a bit more as the months go by, especially towards the end of the year."
+    }
+  ],
+  "TextAnalytics": [
+    {
+      "title": "Sentiment Distribution",
+      "image": "sentiment_distribution.png"
+    },
+    {
+      "title": "Wordcloud Positve",
+      "image": "wordcloud_positive.png"
+    },
+    {
+      "title": "Wordcloud Negative",
+      "image": "wordcloud_negative.png"
+    }
+  ]
+}

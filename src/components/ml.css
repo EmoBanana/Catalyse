@@ -3,11 +3,24 @@
   padding-bottom: 1rem;
 }
 
+.ml-header {
+  margin-left: 1rem;
+}
+
 .ml-graphs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 16px;
   margin-top: 1rem;
-  padding: 0 20px;
+  padding: 0 14px;
   overflow-y: auto;
+}
+
+.ml-menu-title {
+  font-size: 1.2rem;
+}
+
+.ml-menu-image {
+  height: 75px;
+  width: 100%;
 }

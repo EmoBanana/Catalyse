@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Sentiment Distribution",
+    "image": "sentiment_distribution.png"
+  },
+  {
+    "title": "Wordcloud Positve",
+    "image": "wordcloud_positive.png"
+  },
+  {
+    "title": "Wordcloud Negative",
+    "image": "wordcloud_negative.png"
+  }
+]

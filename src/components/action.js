@@ -127,13 +127,15 @@ const Action = ({ setShowNav }) => {
                 />
                 <h2 className="menu-title">{item.title}</h2>
                 <div className="menu-details">
-                  <p className="menu-genre">{item.genre}</p>
-                  <p className="menu-price">{item.price}</p>
+                  <p className="menu-price">
+                    RM {parseFloat(item.price).toFixed(2)}
+                  </p>
+                  <button className="menu-status">Approve</button>
                 </div>
               </div>
             ))}
 
-            {menuData.existingMenu.map((item, index) => (
+            {menuData.ExistingMenu.map((item, index) => (
               <div key={index} className="menu-card">
                 <img
                   src={`/${item.image}`}
@@ -143,8 +145,9 @@ const Action = ({ setShowNav }) => {
                 />
                 <h2 className="menu-title">{item.title}</h2>
                 <div className="menu-details">
-                  <p className="menu-genre">{item.genre}</p>
-                  <p className="menu-price">{item.price}</p>
+                  <p className="menu-price">
+                    RM {parseFloat(item.price).toFixed(2)}
+                  </p>
                 </div>
               </div>
             ))}

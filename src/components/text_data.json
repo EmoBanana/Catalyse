@@ -2,21 +2,21 @@
   {
     "title": "Total Sales",
     "current_data": "\"RM 338858.5\"",
-    "description": "1. \ud83d\udcc8 Summary: The business is doing well, especially with Fried Chicken..."
+    "description": "\ud83d\udcc8 Summary: Your business earned $338,858.50, which shows good income.\n\n\ud83d\udd0d Observations:\n- The total money you made is a healthy amount.\n- This number alone doesn\u2019t say if this is more or less than before.\n- It\u2019s important to compare this with past months to see growth or decline.\n\n\u2705 Recommendation: Try to track your earnings each month so you can spot if business is improving or needs attention."
   },
   {
     "title": "Ranking",
-    "current_data": "[{\"fried_chicken\": \"#1\", \"side\": \"#26\"}]",
-    "description": "1. \ud83d\udcc8 Summary: The business shows a strong performance in Fried Chicken, while delivery times are within a reasonable range.\n\n2. \ud83d\udd0d Observations:\n   - The average total delivery time is about 38.5 minutes, with various stages like order-to-arrival and pickup-to-delivery all contributing to this.\n   - Fried Chicken is performing exceptionally well, ranked number 1 in its cuisine category.\n   - The 'Side' items are less popular, being ranked 26th in their category.\n\n3. \u2705 Recommendation: Focus on promoting Fried Chicken dishes and consider ways to improve or diversify the 'Side' menu offerings to increase their popularity."
+    "current_data": "{\"Side\": 26, \"Fried Chicken\": 1}",
+    "description": "\ud83d\udcc8 Summary: Your fried chicken business is doing very well and is ranked #1 in its category.\n\n\ud83d\udd0d Observations:\n- The fried chicken part of your business holds the top spot in its category.\n- The side dishes are ranked 26th, showing they are less popular compared to fried chicken.\n- This means most customers likely come for your fried chicken items.\n\n\u2705 Recommendation: Focus on promoting your fried chicken since it\u2019s your strongest point, and consider improving or marketing your side dishes more to boost their sales."
   },
   {
     "title": "Transport",
-    "current_data": "[{\"_id\": null, \"avg_order_to_arrival_mins\": 12.482846458186549, \"avg_arrival_to_pickup_mins\": 6.02441602081188, \"avg_pickup_to_delivery_mins\": 19.993496287464094, \"avg_total_delivery_mins\": 38.500758766462525}]",
-    "description": "1. \ud83d\udcc8 Summary: The delivery process is generally smooth, taking just under 39 minutes on average.\n\n2. \ud83d\udd0d Observations:\n   - It takes about 12.5 minutes from order to arrival at the restaurant.\n   - The wait time for picking up the order is roughly 6 minutes.\n   - Deliveries take about 20 minutes from pickup to reaching the customer.\n   - The total average delivery time is 38.5 minutes.\n\n3. \u2705 Recommendation: Consider ways to reduce pickup wait time to make deliveries even faster."
+    "current_data": "[{\"_id\": \"0c2d7\", \"avg_order_to_arrival_mins\": 12.482846458186549, \"avg_arrival_to_pickup_mins\": 6.02441602081188, \"avg_pickup_to_delivery_mins\": 19.993496287464094, \"avg_total_delivery_mins\": 38.500758766462525}]",
+    "description": "\ud83d\udcc8 Summary: Delivery times average around 38.5 minutes from order to customer, which is reasonable but could be improved.\n\n\ud83d\udd0d Observations:\n- It takes about 12.5 minutes on average for the driver to arrive after the order is placed.\n- Then around 6 minutes for food pickup after arrival.\n- The delivery from pickup to customer takes about 20 minutes.\n- Together, these add up to just over 38 minutes total delivery time.\n\n\u2705 Recommendation: Look for ways to speed up driver arrival or food pickup to reduce total delivery time and make customers happier."
   },
   {
     "title": "Market Price",
-    "current_data": "{\"merchant_name\": \"Fried Chicken Express\", \"merchant_price\": 3.0, \"cuisine_avg_price\": NaN, \"price_difference\": NaN, \"percentage_difference\": \"nan%\"}",
-    "description": "1. \ud83d\udcc8 Summary: The business is doing well, especially with its top-selling fried chicken.\n\n2. \ud83d\udd0d Observations:\n   - Delivery takes about 38.5 minutes in total, with each step (order to arrival, arrival to pickup, pickup to delivery) well under control.\n   - Fried chicken is the top-ranked item, while side dishes are far behind at 26th place.\n   - You've earned a solid $338,858.50.\n   - Pricing details for Fried Chicken Express show a price of $3, but average comparison data is missing.\n\n3. \u2705 Recommendation: Keep up the great work with your fried chicken, and consider promoting your side dishes more to boost their popularity."
+    "current_data": "{\"merchant_name\": \"Fried Chicken Express\", \"merchant_price\": [3.0, 9.17], \"cuisine_avg_price\": [2.840909090909091, 8.39], \"price_difference_percentage\": 7.45}",
+    "description": "\ud83d\udcc8 Summary: Your prices are slightly higher than the average for your cuisine.\n\n\ud83d\udd0d Observations:\n- Your price range is between $3.00 and $9.17.\n- The average price for this cuisine is a bit lower, around $2.84 to $8.39.\n- Your prices are about 7.45% higher than the average.\n- This might mean customers see your food as more premium or you could be charging a bit more than other places.\n\n\u2705 Recommendation: Keep an eye on customer feedback to see if the higher prices are okay for them, or consider small discounts or combos to attract more buyers."
   }
 ]

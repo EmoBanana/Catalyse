@@ -1,32 +1,32 @@
 [
   {
-    "title": "customer_growth",
-    "image_path": "customer.jpg",
-    "current_data": "{\"customer_growth\": \"Unknown\"}",
-    "description": "\ud83d\udcc8 Summary: You mostly have new customers each month.\n\n\ud83d\udd0d Key Observations:\n- New customers make up the majority every month compared to returning ones.\n- There's a consistent small number of returning customers.\n- The highest total number of customers appears steady across the year.\n\n\u2705 Tip for Action: Consider a loyalty program to encourage more returning visits."
+    "title": "new_old_ratio",
+    "image_path": "new_old_ratio.png",
+    "current_data": "null",
+    "description": "\ud83d\udcc8 Summary: Most of your customers each month are new, not returning.\n\n\ud83d\udd0d Key Observations:\n- New customers consistently number above 2900 every month.\n- Recurring customers are very few, usually below 50.\n- There are small ups and downs, but new customers stay strong all year.\n\n\u2705 Tip for Action: Try to keep your new customers coming back more often by giving small rewards or special offers."
   },
   {
-    "title": "hourly_order",
-    "image_path": "hourly.jpg",
-    "current_data": "{\"order_count\": 2107}",
-    "description": "\ud83d\udcc8 Summary: Orders are highest early in the morning and in the late afternoon.\n\n\ud83d\udd0d Key Observations:\n- The most orders happen around 6 AM and again at 6 PM.\n- There's a noticeable drop in orders between 7 AM and 10 AM, with the lowest point at 10 AM.\n- Orders pick up again in the afternoon, peaking at 6 PM.\n\n\u2705 Tip for Action: Consider offering morning specials and evening deals to take advantage of the rush during those hours."
+    "title": "order_by_hour",
+    "image_path": "order_by_hour.png",
+    "current_data": "{\"order_count\": 2175}",
+    "description": "\ud83d\udcc8 Summary: Orders peak early in the morning and again in the early evening.\n\n\ud83d\udd0d Key Observations:\n- The busiest hour is 6 AM with the most orders.\n- There\u2019s a dip in orders around midday and afternoon.\n- Orders pick up again after 5 PM and stay high until around 9 PM.\n\n\u2705 Tip for Action: Be ready with more food and staff for busy times at early morning and evening to serve customers faster."
   },
   {
-    "title": "multi_day_hourly",
-    "image_path": "img3.png",
+    "title": "item_order_perhour",
+    "image_path": "multi_day_hourly.png",
     "current_data": "{\"order_count\": 325}",
-    "description": "\ud83d\udcc8 Summary: Salad sales increased in April.\n\n\ud83d\udd0d Key Observations: \n- Salad sales were highest in April compared to other sandwiches.\n- The Tuna sandwich had the lowest sales in March.\n- All items saw a slight sales rise in May. \n\n\u2705 Tip for Action: Consider promoting the Tuna sandwich to boost its popularity."
+    "description": "\ud83d\udcc8 Summary: Orders stay busy all week with some ups and downs at different times each day.\n\n\ud83d\udd0d Key Observations:\n- Most days have higher orders in the morning and evening.\n- Sunday and Saturday show some of the highest order numbers, especially in the evening.\n- Weekdays dip a bit in early afternoon but pick back up later.\n\n\u2705 Tip for Action: Focus on staff and food prep for busy weekend evenings and keep good service on weekday mornings to catch steady orders."
   },
   {
-    "title": "monthly_income",
-    "image_path": "monthly.jpg",
-    "current_data": "{\"montly_income\": \"Unknown\"}",
-    "description": "\ud83d\udcc8 Summary: Income had ups and downs over the months.\n\n\ud83d\udd0d Key Observations:\n- Income was highest in May.\n- It dropped sharply in June.\n- There were smaller ups and downs in other months.\n\n\u2705 Tip for Action: Try to find out why May was so successful and see if you can repeat that in other months."
+    "title": "monthly_summary",
+    "image_path": "monthly_income.png",
+    "current_data": "{\"total_earnings\": 338858.5}",
+    "description": "\ud83d\udcc8 Summary: Your income goes up and down each month, with some months much better than others.\n\n\ud83d\udd0d Key Observations:\n- May is the best month with the highest income.\n- October and December have the lowest income, showing a dip in sales.\n- Other months have steady but smaller changes.\n\n\u2705 Tip for Action: Look into what made May so good and try to copy that for slower months like October and December."
   },
   {
-    "title": "food_breakdown",
-    "image_path": "food.jpg",
+    "title": "item_sales_breakdown",
+    "image_path": "item_sales_breakdown.png",
     "current_data": "[{\"item_name\": \"4-Piece Chicken Meal\", \"monthly_quantity\": 15918}, {\"item_name\": \"Chicken & Waffles\", \"monthly_quantity\": 8552}, {\"item_name\": \"Spicy Chicken Tenders\", \"monthly_quantity\": 4759}, {\"item_name\": \"Potato Wedges\", \"monthly_quantity\": 16702}]",
-    "description": "\ud83d\udcc8 Summary: Fried chicken sales stayed mostly steady, while certain side dishes had big changes.\n\n\ud83d\udd0d Key Observations:\n- For fried chicken, the highest sales were in May, and they remained strong throughout the year.\n- Chicken & Waffles and Spicy Chicken Tenders had a slight dip around June.\n- The 4-Piece Chicken Meal peaked sharply in May for sides.\n\n\u2705 Tip for Action: Consider focusing promotions on the 4-Piece Chicken Meal around May to maximize sales during peak interest."
+    "description": "\ud83d\udcc8 Summary: The 4-Piece Chicken Meal sells the most, while Potato Wedges lead among the sides.\n\n\ud83d\udd0d Key Observations:\n- Fried Chicken sales peak around May and then slowly dip.\n- Potato Wedges have a big spike in May but drop sharply after.\n- Chicken & Waffles and Spicy Chicken Tenders sell less and are fairly steady.\n\n\u2705 Tip for Action: Focus on promoting the popular 4-Piece Chicken Meal and Potato Wedges, especially before May\u2019s peak season."
   }
 ]
