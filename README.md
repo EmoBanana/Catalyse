@@ -7,7 +7,7 @@ With Catalyse, you don’t just *analyse* — you **catalyse** your business gro
 
 ## Links
 
-**Canva:** https://www.canva.com/design/DAGkYZnWrWM/s-S02pfAogHt4H-3y6Pkfw/edit?utm_content=DAGkYZnWrWM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+**Canva:** https://www.canva.com/design/DAGk3sSgKpw/cBoxU5iOzEzptho0Gp9Pgg/edit
 
 **Documentation:** https://drive.google.com/file/d/16ycshubPMgF7WbU9xgI-NLAambmdA3JR/view?usp=sharing
 
@@ -115,12 +115,17 @@ Before you can run the application, you need to have the following installed:
   [Download Node.js](https://nodejs.org/en)
 - **npm** (Node Package Manager)
   npm is bundled with Node.js, so you don't need to install it separately if you have Node.js.
+- **WSL/Ubuntu** (on Windows)
+  Install using:
+  ```bash
+    wsl --install
+  ```
 - **Python** (for ML model)
   [Download Python](https://www.python.org/downloads/)
-- **ML Model Dependencies**
-  Python libraries. Install them using:
+- **uv** (a fast Python package manager)
+  Install after entering WSL using:
   ```bash
-   pip install -r requirements.txt
+    pip install uv
   ```
 
 ## Installation
@@ -128,15 +133,39 @@ Before you can run the application, you need to have the following installed:
 To get started with **Catalyse**, clone the repository and install the dependencies:
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/EmoBanana/meowmeow.git
+   git clone https://github.com/EmoBanana/Catalyse.git
    ```
 
 2. **Navigate to the project directory**:
    ```bash
-   cd meowmeow
+   cd Catalyse
    ```
 
-3. **Install dependencies**:
+### Backend (Inside WSL)
+
+1. **Enter WSL**
+   ```bash
+     wsl
+   ```
+
+2. **Navigate to the backend directory**
+   ```bash
+     cd ~/Catalyse/mcp
+   ```
+
+3. **Install Python dependencies using `uv`**
+   ```bash
+     uv pip install -r requirements.txt
+   ```
+
+4. **Run the backend server**
+   ```bash
+     uvicorn client:app --reload
+   ```
+
+### Frontend (From project root on host machine)
+
+1. **Install Node.js dependencies**:
    ```bash
    npm install
    ```
